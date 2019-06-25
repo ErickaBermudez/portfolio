@@ -1,0 +1,59 @@
+html, body {
+  height: 100%;
+  height: 100vh;
+  background: url(img/background.jpg) no-repeat center center fixed;
+  background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  -webkit-background-size: cover;
+}
+
+.info {
+  opacity: 0.9;
+  width: 300px;
+  height: auto;
+  padding: 20px;
+  border-radius: 10px;
+  background-color: white;
+}
+
+#icons {
+  text-align: center;
+  font-size: 30px;
+}
+
+#info-panel {
+  height: 100%;
+}
+
+.justify {
+  text-align: justify;
+}
+
+.highlight-purple {
+  background-color: #F5C5FE;
+}
+
+.highlight-pink{
+  background-color: #FEC5D4;
+}
+
+/* unvisited link */
+a:link {
+  color: black;
+}
+
+/* visited link */
+a:visited {
+  color: black;
+}
+
+/* mouse over link */
+a:hover {
+  color: #FEC5D4 !important;
+}
+
+/* selected link */
+a:active {
+  color: #FEC5D4 !important;
+}
