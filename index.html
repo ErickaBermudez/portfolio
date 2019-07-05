@@ -15,19 +15,121 @@
 </head>
 
 <body>
-  <div id="info-panel" class="container d-flex justify-content-center align-items-center align-items-center">
-    <div class="info">
-        <h1>Hi!</h1>
-      <div id="cont">
-        <p class="justify">I'm Ericka Bermúdez. I'm an <span class="highlight-pink">IT Management</span> graduate, developer & <span class="highlight-pink">Computer Science</span> student living in Chihuahua, Mexico. Sometimes I write.
+  <nav id="navbar" class="navbar icons fixed-top navbar-expand-lg navbar-light bg-light">
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto">
+        <li class="nav-item"><a href="#projects"><i class="fas fa-folder"></i></a>
+        <li class="nav-item"><a target="_blank" href="mailto:erickabdz@gmail.com?Subject=Hello%20Ericka!" target="_top"><i class="fas fa-envelope-square"></i></a></li>
+        <li class="nav-item"><a target="_blank" id="profile-link" href="https://github.com/ErickaBermudez"><i class="fab fa-github-square"></i></a></li>
+        <li class="nav-item"><a target="_blank" href="https://twitter.com/erickabdz"><i class="fab fa-twitter-square"></i></a></li>
+        <li class="nav-item"><a target="_blank" href="https://www.linkedin.com/in/ericka-bermudez/"><i class="fab fa-linkedin"></i></a></li>
+        <li class="nav-item"><a target="_blank" href="https://www.goodreads.com/user/show/15428420-ericka"><i class="fab fa-goodreads"></i></a></li>
+      </ul>
+    </div>
+  </nav>
+  <main>
+    <section id="welcome-section">
+      <div id="info-panel" class="container d-flex justify-content-center align-items-center align-items-center">
+        <div class="info">
+          <h1>Hi!</h1>
+          <div id="cont">
+            <p class="justify">I'm Ericka Bermúdez. I'm an <span class="highlight-pink">IT Management</span> graduate, developer & <span class="highlight-pink">Computer Science</span> student living in Chihuahua, Mexico. Sometimes I write.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section id="projects">
+      <h1 class="content-title">Projects</h1>
+      <div class="container">
+        <div class="item project-tile"><img src="https://i.ibb.co/Nx7C4mp/books.png"></img>
+          <div class="overlay">
+            <div class="text">
+              <h2>Keep track of your books</h2>
+              Project made with Play Framework for Java, MaterializeCSS, a simple database and XML files.
+              It allows you to make a list of books, print it, save it and then load it.
+              Currently on
+              <span class="highlight-green"><a href="https://github.com/ErickaBermudez/book-control">github</a></span>.
+            </div>
+          </div>
+        </div>
+
+        <div class="item project-tile"><img src="https://i.ibb.co/JHpz0wP/teachers.png"></img>
+          <div class="overlay">
+            <div class="text">
+              <h2>Teacher registration</h2>
+              Project made with Play Framework for Java, Bootstrap and a simple database.
+              It allows you to register, edit, delete and see teachers.
+              Currently on
+              <span class="highlight-green"><a href="https://github.com/ErickaBermudez/teacher-registration">github</a></span>.
+            </div>
+          </div>
+        </div>
+
+        <div class="item project-tile"><img src="https://i.ibb.co/PwGWz0g/doc.png"></img>
+          <div class="overlay">
+            <div class="text">
+              <h2>Product landing page</h2>
+              Documentation responsive web page.
+              Currently on
+              <span class="highlight-green"><a href="https://i.ibb.co/PwGWz0g/doc.png">github</a></span>.
+            </div>
+          </div>
+        </div>
+
+        <div class="item project-tile"><img src="https://i.ibb.co/VQCt2Bk/survey.png"></img>
+          <div class="overlay">
+            <div class="text">
+              <h2>Survey</h2>
+              A survey about readidng habits, made with HTML, CSS and using Bootstrap.
+              You can find it on
+              <span class="highlight-green"><a href="https://github.com/ErickaBermudez/survey-form">github</a></span>.
+            </div>
+          </div>
+        </div>
+
+        <div class="item project-tile"><img src="https://i.ibb.co/28vgym4/tribute.png"></img>
+          <div class="overlay">
+            <div class="text">
+              <h2>Tribute page</h2>
+              A Rosa Parks tribute web page, made with HTML, CSS and using Bootstrap.
+              You can find it live on its
+              <span class="highlight-green"><a href="https://erickabermudez.github.io/tribute-page/">github page</a></span>
+              or see the <span class="highlight-green"><a href="https://github.com/ErickaBermudez/tribute-page">code</a></span> directly.
+            </div>
+          </div>
+        </div>
+
+        <div class="item project-tile"><img src="https://i.ibb.co/C2CNJ8s/cupcakes.jpg"></img>
+          <div class="overlay">
+            <div class="text">
+              <h2>Product landing page</h2>
+              Web page for a fake cupcake company, made with CSS, HTML and some JavaScript. Also used Ruby and Compass.
+              Currently on
+              <span class="highlight-green"><a href="https://github.com/ErickaBermudez/product-landing-page">github</a></span>.
+            </div>
+          </div>
+        </div>
+    </section>
+    <section id="cv">
+      <h1 class="content-title">Curriculum Vitae</h1>
+      <div id="cv-content" class="container">
+        <p>I have done several internships as a web developer, administrative assistand and technical support. Those experiences gave me the skills to plan, design and develop projects alone and working with a team.
+          I have participated in several clubs, and I'm currently one of the coordinators of the Programming Club at my University.
+          I have worked in the past with Java, Javascript, Python, C, C++, HTML, CSS and Android Studio. I speak Spanish and English fluenty, and can manage on French. You can find my full CV on <a
+            href="https://www.linkedin.com/in/ericka-bermudez/">Linkedin</a> or download in PDF/Europass form from <a href="https://drive.google.com/file/d/1laM9-BSJCl7KwhT1WyXxmxeum45JchBE/view?usp=sharing">here</a>.
         </p>
-        <span class="highlight-purple">Contact me:
-        </span>
-        <p id="icons"><a href="mailto:erickabdz@gmail.com?Subject=Hello%20Ericka!" target="_top"><i class="fas fa-envelope-square"></i></a> <a href="https://github.com/ErickaBermudez"><i class="fab fa-github-square"></i></a> <a href="https://twitter.com/erickabdz"><i class="fab fa-twitter-square"></i></a>
-        <a href="https://www.linkedin.com/in/ericka-bermudez/"><i class="fab fa-linkedin"></i></a> <a href="https://www.goodreads.com/user/show/15428420-ericka"><i class="fab fa-goodreads"></i></a></p>
+      </div>
+    </section>
+    <div id="credits">
+      <div class="container">
+        <p>with ♡ by Ericka</p>
       </div>
     </div>
-  </div>
+  </main>
 </body>
 
 </html>
