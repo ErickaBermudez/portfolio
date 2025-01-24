@@ -32,9 +32,9 @@ const InteractiveBackground = ({ children }: { children: ReactNode }) => {
   return (
     <div
       onClick={handleBackgroundClick}
-      className="relative flex justify-center items-center w-screen h-screen overflow-hidden bg-gray-100"
+      className="relative flex justify-center items-center w-screen h-screen overflow-hidden bg-white"
     >
-      {children}
+      <div className="z-30">{children}</div>
       {circles.map((circle, index) => (
         <div
           key={index}
