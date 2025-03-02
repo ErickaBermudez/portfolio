@@ -54,7 +54,7 @@ export default function Contact() {
         </svg>
       </div>
 
-      <div className="grid grid-cols-2 gap-3 mt-10 px-10 lg:px-36 h-[80vh]">
+      <div className="grid grid-cols-2 gap-3 mt-10 px-10 lg:px-36 min-h-[80vh]">
         <div className="flex col-span-2 lg:col-span-1 flex-col items-center justify-center">
           <h1 className="text-4xl font-bold relative z-10">
             Let&apos;s Connect!

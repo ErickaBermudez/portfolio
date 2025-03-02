@@ -24,7 +24,7 @@ export default function About() {
         </svg>
       </div>
 
-      <div className="grid grid-cols-2 gap-3 mt-10 px-10 lg:px-36 h-[80vh]">
+      <div className="grid grid-cols-2 gap-3 mt-10 px-10 lg:px-36 min-h-[80vh]">
         <div className="flex col-span-2 lg:col-span-1 flex-col items-center justify-center align-middle">
           <h1 className="text-4xl font-bold relative z-10">About</h1>
           {/** we need to make a small  under it but like, a little off */}
