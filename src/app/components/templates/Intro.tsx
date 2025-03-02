@@ -4,6 +4,7 @@ import { Limelight } from "next/font/google";
 const limelight = Limelight({
   weight: "400",
   display: "swap",
+  subsets: ["latin"],
 });
 
 export default function Intro() {
