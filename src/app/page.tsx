@@ -1,6 +1,6 @@
 "use client";
 
-import { Intro, About, Stack } from "./components/templates";
+import { Intro, About, Stack, Contact } from "./components/templates";
 
 export default function Home() {
   return (
@@ -8,6 +8,7 @@ export default function Home() {
       <Intro />
       <About />
       <Stack />
+      <Contact />
     </div>
   );
 }
