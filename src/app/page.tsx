@@ -1,9 +1,12 @@
 "use client";
 
-import { useCallback, useEffect, useState } from "react";
-import { InteractiveBackground } from "./components/";
-import { Intro } from "./components/templates";
+import { Intro, About } from "./components/templates";
 
 export default function Home() {
-  return <Intro />;
+  return (
+    <div className="overflow-x-hidden">
+      <Intro />
+      <About />
+    </div>
+  );
 }
