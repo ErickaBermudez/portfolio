@@ -1,3 +1,4 @@
 import Intro from "./Intro";
 import About from "./about";
-export { Intro, About };
+import Stack from "./stack";
+export { Intro, About, Stack };
