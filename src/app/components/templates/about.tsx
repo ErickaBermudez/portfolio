@@ -27,7 +27,7 @@ export default function About() {
       <div className="grid grid-cols-2 gap-3 mt-10 px-10 lg:px-36 h-[80vh]">
         <div className="flex col-span-2 lg:col-span-1 flex-col items-center justify-center align-middle">
           <h1 className="text-4xl font-bold relative z-10">About</h1>
-          {/** we need to make a small rectangle under it but like, a little off */}
+          {/** we need to make a small  under it but like, a little off */}
           <div className="w-24 h-6 bg-blue-200 -mt-5 ml-16" />
         </div>
         <div className="flex flex-col mt-10 lg:mt-0 col-span-2 lg:col-span-1 items-center align-middle justify-center">
