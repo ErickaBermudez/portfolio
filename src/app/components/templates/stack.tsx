@@ -1,10 +1,13 @@
 import { useState } from "react";
+import { FloatingButton } from "../organisms/FloatingButton";
+import Image from "next/image";
 
 export default function Stack() {
   const [activeTab, setActiveTab] = useState("development");
+  const [showT3Message, setShowT3Message] = useState(false);
 
   return (
-    <div className="flex flex-col min-h-screen">
+    <div className="flex flex-col min-h-screen relative">
       <div className="w-full">
         <svg
           viewBox="0 0 1200 120"
@@ -259,6 +262,23 @@ export default function Stack() {
           </div>
         </div>
       </div>
+      <FloatingButton
+        showMessage={showT3Message}
+        setShowMessage={setShowT3Message}
+        content={
+          <div>
+            Currently working with{" "}
+            <a href="https://create.t3.gg/" className="text-[#a02a6d]">
+              T3 Stack
+            </a>
+            , check it out!
+          </div>
+        }
+        icon={
+          <Image src="/icons/kitty.png" alt="T3 Stack" width={50} height={50} />
+        }
+        color="bg-transparent"
+      />
     </div>
   );
 }

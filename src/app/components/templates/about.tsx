@@ -1,4 +1,9 @@
+import { FloatingButton } from "../organisms/FloatingButton";
+import { useState } from "react";
+import Image from "next/image";
+
 export default function About() {
+  const [showBookMessage, setShowBookMessage] = useState(false);
   return (
     <div className="flex flex-col min-h-screen">
       <div className="w-full">
@@ -39,7 +44,14 @@ export default function About() {
             find me teaching about coding or enjoying a book with a cup of
             coffee.
           </p>
-          <div className="mt-4 border-t-2 border-blue-200 pt-4">
+        </div>
+      </div>
+
+      <FloatingButton
+        showMessage={showBookMessage}
+        setShowMessage={setShowBookMessage}
+        content={
+          <div>
             Current book recommendation:
             <a
               href="https://www.goodreads.com/book/show/25666050-algorithms-to-live-by"
@@ -50,8 +62,12 @@ export default function About() {
             </a>{" "}
             by Brian Christian and Tom Griffiths
           </div>
-        </div>
-      </div>
+        }
+        icon={
+          <Image src="/icons/kitty.png" alt="T3 Stack" width={50} height={50} />
+        }
+        color="bg-transparent"
+      />
     </div>
   );
 }
