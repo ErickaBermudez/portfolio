@@ -64,71 +64,194 @@ export default function Stack() {
             <div className="w-full max-w-3xl px-3 bg-white">
               {activeTab === "languages" && (
                 <div className="flex gap-4 ">
-                  <i className="devicon-typescript-plain colored text-3xl" />
-                  <i className="devicon-javascript-plain colored text-3xl" />
-                  <i className="devicon-python-plain-wordmark colored text-3xl" />
-                  <i className="devicon-cplusplus-plain-wordmark colored text-3xl" />
-                  <i className="devicon-java-plain-wordmark colored text-3xl" />
+                  <i
+                    className="devicon-typescript-plain colored text-3xl"
+                    title="TypeScript"
+                  />
+                  <i
+                    className="devicon-javascript-plain colored text-3xl"
+                    title="JavaScript"
+                  />
+                  <i
+                    className="devicon-python-plain-wordmark colored text-3xl"
+                    title="Python"
+                  />
+                  <i
+                    className="devicon-cplusplus-plain-wordmark colored text-3xl"
+                    title="C++"
+                  />
+                  <i
+                    className="devicon-java-plain-wordmark colored text-3xl"
+                    title="Java"
+                  />
                 </div>
               )}
               {activeTab === "development" && (
                 <div className="flex gap-4 flex-wrap">
-                  <i className="devicon-bootstrap-plain-wordmark colored text-3xl" />
-                  <i className="devicon-tailwindcss-original colored text-3xl" />
-                  <i className="devicon-css3-plain-wordmark colored text-3xl" />
-                  <i className="devicon-sass-original colored text-3xl" />
-                  <i className="devicon-html5-plain-wordmark colored text-3xl" />
-                  <i className="devicon-angularjs-plain colored text-3xl" />
-                  <i className="devicon-astro-plain colored text-3xl" />
-                  <i className="devicon-react-original-wordmark colored text-3xl" />
-                  <i className="devicon-nextjs-plain-wordmark colored text-3xl" />
-                  <i className="devicon-wordpress-plain colored text-3xl" />
-                  <i className="devicon-nodejs-plain colored text-3xl" />
-                  <i className="devicon-django-plain colored text-3xl" />
-                  <i className="devicon-express-original-wordmark colored text-3xl" />
-                  <i className="devicon-electron-original colored text-3xl" />
-                  <i className="devicon-flutter-plain colored text-3xl" />
+                  <i
+                    className="devicon-bootstrap-plain-wordmark colored text-3xl"
+                    title="Bootstrap"
+                  />
+                  <i
+                    className="devicon-tailwindcss-original colored text-3xl"
+                    title="Tailwind CSS"
+                  />
+                  <i
+                    className="devicon-css3-plain-wordmark colored text-3xl"
+                    title="CSS3"
+                  />
+                  <i
+                    className="devicon-sass-original colored text-3xl"
+                    title="Sass"
+                  />
+                  <i
+                    className="devicon-html5-plain-wordmark colored text-3xl"
+                    title="HTML5"
+                  />
+                  <i
+                    className="devicon-angularjs-plain colored text-3xl"
+                    title="Angular"
+                  />
+                  <i
+                    className="devicon-astro-plain colored text-3xl"
+                    title="Astro"
+                  />
+                  <i
+                    className="devicon-react-original-wordmark colored text-3xl"
+                    title="React"
+                  />
+                  <i
+                    className="devicon-nextjs-plain-wordmark colored text-3xl"
+                    title="Next.js"
+                  />
+                  <i
+                    className="devicon-wordpress-plain colored text-3xl"
+                    title="WordPress"
+                  />
+                  <i
+                    className="devicon-nodejs-plain colored text-3xl"
+                    title="Node.js"
+                  />
+                  <i
+                    className="devicon-django-plain colored text-3xl"
+                    title="Django"
+                  />
+                  <i
+                    className="devicon-express-original-wordmark colored text-3xl"
+                    title="Express"
+                  />
+                  <i
+                    className="devicon-electron-original colored text-3xl"
+                    title="Electron"
+                  />
+                  <i
+                    className="devicon-flutter-plain colored text-3xl"
+                    title="Flutter"
+                  />
                 </div>
               )}
               {activeTab === "databases" && (
                 <div className="flex gap-4">
-                  <i className="devicon-postgresql-plain-wordmark colored text-3xl" />
-                  <i className="devicon-mysql-plain-wordmark colored text-3xl" />
-                  <i className="devicon-sqlite-plain-wordmark colored text-3xl" />
-                  <i className="devicon-mongodb-plain-wordmark colored text-3xl" />
-                  <i className="devicon-firebase-plain colored text-3xl" />
-                  <i className="devicon-trpc-plain colored text-3xl" />
-                  <i className="devicon-prisma-original colored text-3xl" />
+                  <i
+                    className="devicon-postgresql-plain-wordmark colored text-3xl"
+                    title="PostgreSQL"
+                  />
+                  <i
+                    className="devicon-mysql-plain-wordmark colored text-3xl"
+                    title="MySQL"
+                  />
+                  <i
+                    className="devicon-sqlite-plain-wordmark colored text-3xl"
+                    title="SQLite"
+                  />
+                  <i
+                    className="devicon-mongodb-plain-wordmark colored text-3xl"
+                    title="MongoDB"
+                  />
+                  <i
+                    className="devicon-firebase-plain colored text-3xl"
+                    title="Firebase"
+                  />
+                  <i
+                    className="devicon-trpc-plain colored text-3xl"
+                    title="tRPC"
+                  />
+                  <i
+                    className="devicon-prisma-original colored text-3xl"
+                    title="Prisma"
+                  />
                 </div>
               )}
               {activeTab === "others" && (
                 <div className="">
                   <h2 className="text-xl font-bold">DevOps</h2>
                   <div className="flex gap-4">
-                    <i className="devicon-amazonwebservices-plain-wordmark colored text-3xl" />
-                    <i className="devicon-docker-plain colored text-3xl" />
-                    <i className="devicon-git-plain-wordmark colored text-3xl" />
-                    <i className="devicon-pulumi-plain colored text-3xl" />
-                    <i className="devicon-sentry-original colored text-3xl" />
+                    <i
+                      className="devicon-amazonwebservices-plain-wordmark colored text-3xl"
+                      title="AWS"
+                    />
+                    <i
+                      className="devicon-docker-plain colored text-3xl"
+                      title="Docker"
+                    />
+                    <i
+                      className="devicon-git-plain-wordmark colored text-3xl"
+                      title="Git"
+                    />
+                    <i
+                      className="devicon-pulumi-plain colored text-3xl"
+                      title="Pulumi"
+                    />
+                    <i
+                      className="devicon-sentry-original colored text-3xl"
+                      title="Sentry"
+                    />
                   </div>
 
                   <h2 className="text-xl font-bold mt-4">
                     Machine Learning & Analytics
                   </h2>
                   <div className="flex gap-4">
-                    <i className="devicon-numpy-plain colored text-3xl" />
-                    <i className="devicon-pandas-plain colored text-3xl" />
-                    <i className="devicon-tensorflow-original-wordmark colored text-3xl" />
-                    <i className="devicon-pytorch-original colored text-3xl" />
+                    <i
+                      className="devicon-numpy-plain colored text-3xl"
+                      title="NumPy"
+                    />
+                    <i
+                      className="devicon-pandas-plain colored text-3xl"
+                      title="Pandas"
+                    />
+                    <i
+                      className="devicon-tensorflow-original-wordmark colored text-3xl"
+                      title="TensorFlow"
+                    />
+                    <i
+                      className="devicon-pytorch-original colored text-3xl"
+                      title="PyTorch"
+                    />
                   </div>
 
                   <h2 className="text-xl font-bold mt-4">Development Tools</h2>
                   <div className="flex gap-4">
-                    <i className="devicon-jira-plain colored text-3xl" />
-                    <i className="devicon-storybook-plain colored text-3xl" />
-                    <i className="devicon-swagger-plain colored text-3xl" />
-                    <i className="devicon-ubuntu-plain colored text-3xl" />
-                    <i className="devicon-trello-plain colored text-3xl" />
+                    <i
+                      className="devicon-jira-plain colored text-3xl"
+                      title="Jira"
+                    />
+                    <i
+                      className="devicon-storybook-plain colored text-3xl"
+                      title="Storybook"
+                    />
+                    <i
+                      className="devicon-swagger-plain colored text-3xl"
+                      title="Swagger"
+                    />
+                    <i
+                      className="devicon-ubuntu-plain colored text-3xl"
+                      title="Ubuntu"
+                    />
+                    <i
+                      className="devicon-trello-plain colored text-3xl"
+                      title="Trello"
+                    />
                   </div>
                 </div>
               )}
