@@ -1,10 +1,8 @@
 import { useState } from "react";
-import { FloatingButton } from "../organisms/FloatingButton";
-import Image from "next/image";
+import Projects from "./projects";
 
 export default function Stack() {
   const [activeTab, setActiveTab] = useState("development");
-  const [showT3Message, setShowT3Message] = useState(false);
 
   return (
     <div className="flex flex-col min-h-screen relative">
@@ -18,7 +16,7 @@ export default function Stack() {
         >
           <path
             d="M0,0 H1200 V20
-               C1100,120 1000,20 900,100
+               C1300,200 1000,20 900,100
                C800,180 700,0 600,80
                C500,160 400,20 300,100
                C200,180 100,20 0,100
@@ -30,29 +28,29 @@ export default function Stack() {
 
       <div className="grid grid-cols-2 gap-3 mt-10 px-10 lg:px-36 h-[80vh]">
         <div className="flex col-span-2 lg:col-span-1 flex-col items-center justify-center align-middle">
-          <h1 className="text-4xl font-bold relative z-10">Tech Stack</h1>
+          <h1 className="text-4xl font-bold relative z-10">What do I do?</h1>
           <div
-            className="w-40 h-6 -mt-5 ml-20"
+            className="w-48 h-6 -mt-10 -ml-36"
             style={{ backgroundColor: "#FCC6FF" }}
           />
         </div>
         <div className="flex flex-col mt-10 lg:mt-0 col-span-2 lg:col-span-1 items-center align-middle justify-center">
           <p>
-            From front-end finesse to backend brilliance, I've got you covered.
-            I specialize in full-stack development, crafting everything from
-            sleek, responsive interfaces to rock-solid server logic. I also love
-            diving into the world of machine learning and data analytics, where
-            insights turn into actionable magic.
+            From front-end finesse to backend brilliance, I&apos;ve got you
+            covered. I specialize in full-stack development, crafting everything
+            from sleek, responsive interfaces to rock-solid server logic. I also
+            love diving into the world of machine learning and data analytics,
+            where insights turn into actionable magic.
           </p>
 
-          <div className="flex flex-col mt-10 w-full">
-            <div className="flex space-x-4 mb-8">
+          <div className="flex flex-col  mt-10 w-full">
+            <div className="flex flex-col md:flex-row md:space-x-4 mb-8">
               {["languages", "development", "databases", "others"].map(
                 (tab) => (
                   <button
                     key={tab}
                     onClick={() => setActiveTab(tab)}
-                    className={`px-6 py-2 transition-all duration-300 ${
+                    className={`px-6 py-2  transition-all duration-300 ${
                       activeTab === tab
                         ? "bg-[#FCC6FF] text-gray-800 "
                         : "bg-gray-100 hover:bg-gray-200"
@@ -64,7 +62,7 @@ export default function Stack() {
               )}
             </div>
 
-            <div className="w-full max-w-3xl px-3 bg-white">
+            <div className="w-full max-w-3xl md:px-3 bg-white">
               {activeTab === "languages" && (
                 <div className="flex gap-4 ">
                   <i
@@ -262,23 +260,8 @@ export default function Stack() {
           </div>
         </div>
       </div>
-      <FloatingButton
-        showMessage={showT3Message}
-        setShowMessage={setShowT3Message}
-        content={
-          <div>
-            Currently working with{" "}
-            <a href="https://create.t3.gg/" className="text-[#a02a6d]">
-              T3 Stack
-            </a>
-            , check it out!
-          </div>
-        }
-        icon={
-          <Image src="/icons/kitty.png" alt="T3 Stack" width={50} height={50} />
-        }
-        color="bg-transparent"
-      />
+
+      <Projects />
     </div>
   );
 }

@@ -1,9 +1,4 @@
-import { FloatingButton } from "../organisms/FloatingButton";
-import { useState } from "react";
-import Image from "next/image";
-
 export default function About() {
-  const [showBookMessage, setShowBookMessage] = useState(false);
   return (
     <div className="flex flex-col min-h-screen">
       <div className="w-full">
@@ -37,37 +32,27 @@ export default function About() {
         </div>
         <div className="flex flex-col mt-10 lg:mt-0 col-span-2 lg:col-span-1 items-center align-middle justify-center">
           <p>
-            Hello there! I’m Ericka Bermúdez – a full-stack developer who
+            Hello there! I’m Ericka Bermúdez – a{" "}
+            <span className="text-blue-400">full-stack</span> developer who
             thrives on creating dynamic, scalable solutions. What makes me tick?
             Clean code, clever problem-solving, and exploring the vast potential
-            of data analytics and machine learning. When I’m not coding, you’ll
-            find me teaching about coding or enjoying a book with a cup of
-            coffee.
+            of <span className="text-blue-400">data analytics</span> and{" "}
+            <span className="text-blue-400">machine learning</span>. When I’m
+            not coding, you’ll find me teaching about coding or enjoying a book
+            with a cup of coffee.
           </p>
-        </div>
-      </div>
-
-      <FloatingButton
-        showMessage={showBookMessage}
-        setShowMessage={setShowBookMessage}
-        content={
-          <div>
-            Current book recommendation:
+          <div className="mt-4 border-t-2 border-blue-200 pt-4">
+            Current book recommendation:{" "}
             <a
               href="https://www.goodreads.com/book/show/25666050-algorithms-to-live-by"
-              className="text-blue-500"
+              className="text-blue-400 underline"
             >
-              {" "}
               Algorithms to Live By
             </a>{" "}
             by Brian Christian and Tom Griffiths
           </div>
-        }
-        icon={
-          <Image src="/icons/kitty.png" alt="T3 Stack" width={50} height={50} />
-        }
-        color="bg-transparent"
-      />
+        </div>
+      </div>
     </div>
   );
 }
