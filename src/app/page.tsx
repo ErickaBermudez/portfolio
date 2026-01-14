@@ -5,7 +5,7 @@ import { Navbar, ScrollToTop } from "./components/organisms";
 
 export default function Home() {
   return (
-    <main className="relative overflow-x-hidden my-3">
+    <main className="relative overflow-x-hidden my-3 bg-white">
       <Navbar />
       <section id="intro" className="min-h-screen">
         <Intro />
