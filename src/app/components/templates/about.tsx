@@ -27,29 +27,27 @@ export default function About() {
       <div className="grid grid-cols-2 gap-3 mt-10 px-10 lg:px-36 min-h-[80vh]">
         <div className="flex col-span-2 lg:col-span-1 flex-col items-center justify-center align-middle">
           <h1 className="text-4xl font-bold relative z-10">About</h1>
-          {/** we need to make a small  under it but like, a little off */}
           <div className="w-24 h-6 bg-blue-200 -mt-5 ml-16" />
         </div>
         <div className="flex flex-col mt-10 lg:mt-0 col-span-2 lg:col-span-1 items-center align-middle justify-center">
           <p>
-            Hello there! I’m Ericka Bermúdez – a{" "}
-            <span className="text-blue-400">full-stack</span> developer who
-            thrives on creating dynamic, scalable solutions. What makes me tick?
-            Clean code, clever problem-solving, and exploring the vast potential
-            of <span className="text-blue-400">data analytics</span> and{" "}
-            <span className="text-blue-400">machine learning</span>. When I’m
-            not coding, you’ll find me teaching about coding or enjoying a book
+            Hello there! I’m Ericka Bermúdez – a{" "} <span className="text-blue-400">problem solver</span> 
+            that often writes code to solve them.
+            I thrive on creating smart and efficient solutions. I have a passion for 
+            system design, clever AI use, and exploring the vast potential
+            of data. When I’m
+            not coding, you’ll find me enjoying a book
             with a cup of coffee.
           </p>
           <div className="mt-4 border-t-2 border-blue-200 pt-4">
             Current book recommendation:{" "}
             <a
-              href="https://www.goodreads.com/book/show/25666050-algorithms-to-live-by"
+              href="https://www.goodreads.com/book/show/222725518-empire-of-ai?ac=1&from_search=true&qid=kFibCIf00g&rank=1"
               className="text-blue-400 underline"
             >
-              Algorithms to Live By
+              Empire of AI
             </a>{" "}
-            by Brian Christian and Tom Griffiths
+            by Karen Hao
           </div>
         </div>
       </div>
