@@ -31,8 +31,8 @@ export default function About() {
         </div>
         <div className="flex flex-col mt-10 lg:mt-0 col-span-2 lg:col-span-1 items-center align-middle justify-center">
           <p>
-            Hello there! I’m Ericka Bermúdez – a{" "} <span className="text-blue-400">problem solver</span> 
-            that often writes code to solve them.
+            Hello there! I’m Ericka Bermúdez – a{" "} <span className="text-blue-400">problem solver</span> {" "}
+            that often writes code to fix them.
             I thrive on creating smart and efficient solutions. I have a passion for 
             system design, clever AI use, and exploring the vast potential
             of data. When I’m

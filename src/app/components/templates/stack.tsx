@@ -36,11 +36,7 @@ export default function Stack() {
         </div>
         <div className="flex flex-col mt-10 lg:mt-0 col-span-2 lg:col-span-1 items-center align-middle justify-center">
           <p>
-            From front-end finesse to backend brilliance, I&apos;ve got you
-            covered. I specialize in full-stack development, crafting everything
-            from sleek, responsive interfaces to rock-solid server logic. I also
-            love diving into the world of machine learning and data analytics,
-            where insights turn into actionable magic.
+          I enjoy learning and adapting to new technologies when they’re the right tool for the job. Here’s the stack I’ve used most throughout my career so far.
           </p>
 
           <div className="flex flex-col  mt-10 w-full">
