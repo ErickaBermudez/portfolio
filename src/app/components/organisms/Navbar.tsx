@@ -1,75 +1,128 @@
 "use client";
 
+import { useEffect, useState } from "react";
+
+const NAV_LINKS = [
+  { id: "about", label: "About" },
+  { id: "stack", label: "Stack" },
+  { id: "leadership", label: "Leadership" },
+  { id: "projects", label: "Projects" },
+  { id: "research", label: "Research" },
+  { id: "contact", label: "Contact" },
+];
+
 export default function Navbar() {
+  const [theme, setTheme] = useState<"light" | "dark" | null>(null);
+  const [menuOpen, setMenuOpen] = useState(false);
+
+  useEffect(() => {
+    setTheme(
+      document.documentElement.classList.contains("dark") ? "dark" : "light"
+    );
+  }, []);
+
+  const toggleTheme = () => {
+    const next = theme === "dark" ? "light" : "dark";
+    document.documentElement.classList.toggle("dark", next === "dark");
+    try {
+      localStorage.setItem("ericka-theme", next);
+    } catch {
+      // localStorage may be unavailable (private browsing, etc.) — theme just won't persist.
+    }
+    setTheme(next);
+  };
+
   const scrollToSection = (
     e: React.MouseEvent<HTMLAnchorElement>,
     id: string
   ) => {
     e.preventDefault();
-    const element = document.getElementById(id);
-    if (element) {
-      element.scrollIntoView({ behavior: "smooth", block: "start" });
-    }
+    document.getElementById(id)?.scrollIntoView({
+      behavior: "smooth",
+      block: "start",
+    });
+    setMenuOpen(false);
   };
 
   return (
-    <nav className="bg-white/80 backdrop-blur-sm shadow-sm absolute top-0 left-0 right-0 z-50">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex justify-between h-16 items-center">
-          <div className="flex space-x-8">
-            <a
-              href="#about"
-              onClick={(e) => scrollToSection(e, "about")}
-              className="text-gray-700 hover:text-gray-900 px-3 py-2 text-sm font-medium transition-colors"
-            >
-              About
-            </a>
-            <a
-              href="#stack"
-              onClick={(e) => scrollToSection(e, "stack")}
-              className="text-gray-700 hover:text-gray-900 px-3 py-2 text-sm font-medium transition-colors"
-            >
-              Stack
-            </a>
-            <a
-              href="#contact"
-              onClick={(e) => scrollToSection(e, "contact")}
-              className="text-gray-700 hover:text-gray-900 px-3 py-2 text-sm font-medium transition-colors"
-            >
-              Contact
-            </a>
-          </div>
+    <nav
+      aria-label="Main"
+      className="sticky top-0 z-50 flex items-center gap-4 px-5 sm:px-8 lg:px-[52px] py-3.5 bg-bg border-b-2 border-ink"
+    >
+      <a
+        href="#top"
+        aria-label="Home"
+        onClick={(e) => scrollToSection(e, "top")}
+        className="font-display text-2xl text-ink no-underline focus:outline-none focus-visible:outline focus-visible:outline-[3px] focus-visible:outline-accent focus-visible:outline-offset-2"
+      >
+        e<span className="text-accent">.</span>
+      </a>
 
+      <div className="hidden lg:flex flex-wrap gap-0.5 ml-2">
+        {NAV_LINKS.map(({ id, label }) => (
+          <a
+            key={id}
+            href={`#${id}`}
+            onClick={(e) => scrollToSection(e, id)}
+            className="px-3.5 py-2 rounded-full text-ink font-semibold text-[15px] no-underline hover:bg-nav-pill focus:outline-none focus-visible:outline focus-visible:outline-[3px] focus-visible:outline-accent focus-visible:outline-offset-2"
+          >
+            {label}
+          </a>
+        ))}
+      </div>
+
+      <div className="ml-auto flex items-center gap-3">
+        <button
+          onClick={toggleTheme}
+          aria-label={
+            theme === "dark" ? "Switch to light theme" : "Switch to dark theme"
+          }
+          className="w-10 h-10 rounded-full border-2 border-ink bg-card text-ink text-base shadow-[2px_2px_0_var(--ink)] hover:-translate-x-px hover:-translate-y-px hover:shadow-[3px_3px_0_var(--ink)] transition-transform focus:outline-none focus-visible:outline focus-visible:outline-[3px] focus-visible:outline-accent focus-visible:outline-offset-2"
+        >
+          <span className={theme === null ? "opacity-0" : undefined}>
+            {theme === "dark" ? "☀" : "🌙"}
+          </span>
+        </button>
+
+        <a
+          href="/docs/ErickaBermudez.pdf"
+          download
+          className="hidden lg:inline-flex text-[15px] font-extrabold text-accent-ink bg-accent px-5 py-[11px] rounded-full no-underline shadow-[3px_3px_0_var(--ink)] hover:-translate-x-px hover:-translate-y-px hover:shadow-[4px_4px_0_var(--ink)] transition-transform focus:outline-none focus-visible:outline focus-visible:outline-[3px] focus-visible:outline-accent focus-visible:outline-offset-2"
+        >
+          Download CV
+        </a>
+
+        <button
+          onClick={() => setMenuOpen((o) => !o)}
+          aria-label={menuOpen ? "Close menu" : "Open menu"}
+          aria-expanded={menuOpen}
+          className="lg:hidden w-10 h-10 rounded-xl border-2 border-ink bg-card text-ink text-lg shadow-[2px_2px_0_var(--ink)] focus:outline-none focus-visible:outline focus-visible:outline-[3px] focus-visible:outline-accent focus-visible:outline-offset-2"
+        >
+          {menuOpen ? "✕" : "☰"}
+        </button>
+      </div>
+
+      {menuOpen && (
+        <div className="lg:hidden absolute top-full left-0 right-0 flex flex-col gap-0.5 px-5 sm:px-8 pt-2.5 pb-4 bg-bg border-b-2 border-ink">
+          {NAV_LINKS.map(({ id, label }) => (
+            <a
+              key={id}
+              href={`#${id}`}
+              onClick={(e) => scrollToSection(e, id)}
+              className="px-3.5 py-3 rounded-xl text-ink font-extrabold text-[17px] no-underline hover:bg-nav-pill focus:outline-none focus-visible:outline focus-visible:outline-[3px] focus-visible:outline-accent focus-visible:outline-offset-2"
+            >
+              {label}
+            </a>
+          ))}
           <a
             href="/docs/ErickaBermudez.pdf"
             download
-            className="hidden md:inline-flex items-center px-4 py-2 border border-transparent text-sm font-medium rounded-md text-white bg-[#FFA09B] hover:bg-[#9c5956] transition-colors"
+            className="mt-2 text-center text-base font-extrabold text-accent-ink bg-accent px-5 py-[13px] rounded-full no-underline shadow-[3px_3px_0_var(--ink)] focus:outline-none focus-visible:outline focus-visible:outline-[3px] focus-visible:outline-accent focus-visible:outline-offset-2"
           >
             Download CV
           </a>
-
-          <a
-            href="/docs/ErickaBermudez.pdf"
-            download
-            className="md:hidden inline-flex px-2 py-1 items-center  border border-transparent text-sm font-medium rounded-md text-white bg-[#FFA09B] hover:bg-[#9c5956] transition-colors"
-          >
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              fill="none"
-              viewBox="0 0 24 24"
-              strokeWidth="1.5"
-              stroke="currentColor"
-              className="size-5"
-            >
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                d="M9 8.25H7.5a2.25 2.25 0 0 0-2.25 2.25v9a2.25 2.25 0 0 0 2.25 2.25h9a2.25 2.25 0 0 0 2.25-2.25v-9a2.25 2.25 0 0 0-2.25-2.25H15M9 12l3 3m0 0 3-3m-3 3V2.25"
-              />
-            </svg>
-          </a>
         </div>
-      </div>
+      )}
     </nav>
   );
 }

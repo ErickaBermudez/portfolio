@@ -1,55 +1,38 @@
 export default function About() {
   return (
-    <div className="flex flex-col min-h-screen">
-      <div className="w-full">
-        <svg
-          viewBox="0 0 1200 120"
-          preserveAspectRatio="none"
-          className="w-full h-24 text-blue-200"
-          aria-hidden="true"
-        >
-          <path
-            d="M0,0 H1200 V20
-               C1150,90 1100,40 1050,80
-               C1000,120 950,60 900,90
-               C850,120 800,40 750,80
-               C700,120 650,60 600,90
-               C550,120 500,40 450,80
-               C400,120 350,60 300,90
-               C250,120 200,40 150,80
-               C100,120 50,60 0,90
-               Z"
-            fill="currentColor"
-          />
-        </svg>
+    <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12 items-center max-w-[1080px] mx-auto">
+      <div>
+        <h2 className="m-0 mb-4 font-display font-extrabold text-[clamp(28px,4vw,36px)]">
+          About me
+        </h2>
+        <p className="m-0 text-[clamp(16px,2vw,18px)] leading-[1.8] max-w-[620px]">
+          Hello there! I&apos;m Ericka Bermúdez — a problem solver who often
+          ends up writing code to fix things. These days I&apos;m leading a
+          team building an AI platform, and still very much in it with them —
+          writing code, shaping the architecture, reviewing the work. I care
+          about good system design, responsible AI, and what&apos;s actually
+          possible with data. When I&apos;m not coding, you&apos;ll find me
+          enjoying a book with a cup of coffee.
+        </p>
+        <p className="mt-5 mb-0 font-mono text-[13.5px] text-muted">
+          Spanish (native) · English (fluent, TOEFL iBT 108) · Basic Chinese
+          &amp; Korean
+        </p>
       </div>
 
-      <div className="grid grid-cols-2 gap-3 mt-10 px-10 lg:px-36 min-h-[80vh]">
-        <div className="flex col-span-2 lg:col-span-1 flex-col items-center justify-center align-middle">
-          <h1 className="text-4xl font-bold relative z-10">About</h1>
-          <div className="w-24 h-6 bg-blue-200 -mt-5 ml-16" />
-        </div>
-        <div className="flex flex-col mt-10 lg:mt-0 col-span-2 lg:col-span-1 items-center align-middle justify-center">
-          <p>
-            Hello there! I’m Ericka Bermúdez – a{" "} <span className="text-blue-400">problem solver</span> {" "}
-            that often writes code to fix them.
-            I thrive on creating smart and efficient solutions. I have a passion for 
-            system design, clever AI use, and exploring the vast potential
-            of data. When I’m
-            not coding, you’ll find me enjoying a book
-            with a cup of coffee.
-          </p>
-          <div className="mt-4 border-t-2 border-blue-200 pt-4">
-            Current book recommendation:{" "}
-            <a
-              href="https://www.goodreads.com/book/show/222725518-empire-of-ai?ac=1&from_search=true&qid=kFibCIf00g&rank=1"
-              className="text-blue-400 underline"
-            >
-              Empire of AI
-            </a>{" "}
-            by Karen Hao
-          </div>
-        </div>
+      <div className="justify-self-center max-w-[340px] w-full bg-card border-2 border-ink rounded-2xl px-6 py-[22px] shadow-[5px_5px_0_var(--salmon)] rotate-[1.5deg] hover:rotate-0 transition-transform">
+        <p className="m-0 font-mono text-[11.5px] tracking-[.12em] uppercase text-muted2">
+          📖 Current book rec
+        </p>
+        <p className="mt-2 mb-0 text-[19px] font-extrabold font-display">
+          <a
+            href="https://www.goodreads.com/book/show/222725518-empire-of-ai"
+            className="text-ink underline decoration-accent underline-offset-4"
+          >
+            Empire of AI
+          </a>
+        </p>
+        <p className="mt-1 mb-0 text-[15px] text-muted">by Karen Hao</p>
       </div>
     </div>
   );

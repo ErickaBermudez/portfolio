@@ -1,24 +1,71 @@
 "use client";
 
-import { About, Contact, Intro, Stack } from "./components/templates";
+import {
+  About,
+  Contact,
+  Education,
+  Intro,
+  Leadership,
+  Projects,
+  Research,
+  Stack,
+} from "./components/templates";
 import { Navbar, ScrollToTop } from "./components/organisms";
+
+const SECTION_PADDING = "px-5 sm:px-8 lg:px-[52px] py-11 sm:py-14 lg:py-[68px]";
 
 export default function Home() {
   return (
-    <main className="relative overflow-x-hidden my-3 bg-white">
+    <main className="relative overflow-x-hidden bg-bg text-ink">
       <Navbar />
-      <section id="intro" className="min-h-screen">
+
+      <section id="top" className="scroll-mt-20">
         <Intro />
       </section>
-      <section id="about" className="min-h-screen my-5">
+
+      <section
+        id="about"
+        className={`scroll-mt-20 bg-bg-soft border-y-2 border-ink ${SECTION_PADDING}`}
+      >
         <About />
       </section>
-      <section id="stack" className="min-h-screen my-5">
+
+      <section id="stack" className={`scroll-mt-20 ${SECTION_PADDING}`}>
         <Stack />
       </section>
-      <section id="contact" className="min-h-screen my-5">
-        <Contact />
+
+      <section
+        id="leadership"
+        className={`scroll-mt-20 bg-bg-rose border-y-2 border-ink ${SECTION_PADDING}`}
+      >
+        <Leadership />
       </section>
+
+      <section id="projects" className={`scroll-mt-20 ${SECTION_PADDING}`}>
+        <Projects />
+      </section>
+
+      <section
+        id="research"
+        className={`scroll-mt-20 bg-bg-soft border-y-2 border-ink ${SECTION_PADDING}`}
+      >
+        <Research />
+      </section>
+
+      <section id="education" className={`scroll-mt-20 ${SECTION_PADDING}`}>
+        <Education />
+      </section>
+
+      <section
+        id="contact"
+        className={`scroll-mt-20 bg-bg-soft border-t-2 border-ink px-5 sm:px-8 lg:px-[52px] py-11 sm:py-14 lg:pt-[68px] lg:pb-[76px]`}
+      >
+        <Contact />
+        <p className="max-w-[1080px] mx-auto mt-[52px] font-mono text-xs text-muted2">
+          © 2026 Ericka Bermúdez · made with 🧡 and too much coffee
+        </p>
+      </section>
+
       <ScrollToTop />
     </main>
   );

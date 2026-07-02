@@ -1,34 +1,65 @@
-@import url('https://fonts.googleapis.com/css2?family=Limelight&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
-
-
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --bg: #fff8f1;
+  --bg-soft: #ffeedd;
+  --bg-rose: #fdeef0;
+  --ink: #3a2c28;
+  --card: #ffffff;
+  --muted: #7a6155;
+  --muted2: #a3826f;
+  --accent: #e05d4b;
+  --accent-ink: #fff8f1;
+  --peach: #ffd9a8;
+  --salmon: #f7b1a4;
+  --rose: #f9cdd8;
+  --sage: #d8ecc8;
+  --chip-ink: #3a2c28;
+  --stripe1: #ffeedd;
+  --stripe2: #fff8f1;
+  --dash: #d9b7a0;
+  --input-bg: #fff8f1;
+  --nav-pill: #ffe4c9;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+html.dark {
+  --bg: #231a15;
+  --bg-soft: #2c2119;
+  --bg-rose: #2e211f;
+  --ink: #f2e7da;
+  --card: #32261d;
+  --muted: #cbb9a9;
+  --muted2: #a08d6f;
+  --accent: #f2836f;
+  --accent-ink: #231a15;
+  --stripe1: #2c2119;
+  --stripe2: #32261d;
+  --dash: #5c4a3a;
+  --input-bg: #2c2119;
+  --nav-pill: #43322a;
+}
+
+html {
+  scroll-behavior: smooth;
 }
 
 body {
-  color: var(--foreground);
-  background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
+  color: var(--ink);
+  background: var(--bg);
+  transition: background 0.3s, color 0.3s;
 }
 
-h1 {
-  font-family: 'Limelight', cursive;
-  font-size: 3rem;
-}
-
-p {
-  font-family: 'Poppins', sans-serif;
-  font-size: 1.2rem;
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+  html {
+    scroll-behavior: auto;
+  }
 }

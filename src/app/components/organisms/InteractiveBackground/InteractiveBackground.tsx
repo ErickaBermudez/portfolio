@@ -1,44 +1,57 @@
-import React, { ReactNode, useState } from "react";
+import React, { ReactNode, useRef, useState } from "react";
+
+const MAX_CIRCLES = 18;
+const COLORS = ["var(--peach)", "var(--salmon)", "var(--rose)"];
+
+const getRandomSize = () => Math.floor(Math.random() * 50) + 20; // 20px–70px, matching the static decorative circles
+const getRandomColor = () => COLORS[Math.floor(Math.random() * COLORS.length)];
+
+interface Circle {
+  id: number;
+  size: number;
+  x: number;
+  y: number;
+  color: string;
+}
+
+let nextId = 0;
 
 const InteractiveBackground = ({ children }: { children: ReactNode }) => {
-  const getRandomSize = () => Math.floor(Math.random() * 100) + 20; // Random size between 20px and 70px
-  const getRandomColor = () => {
-    const colors = ["#FCC6FF", "#FFE6C9", "#FFC785", "#FFA09B"];
-    return colors[Math.floor(Math.random() * colors.length)];
-  };
+  const containerRef = useRef<HTMLDivElement>(null);
+  const [circles, setCircles] = useState<Circle[]>([]);
 
-  interface Circle {
-    size: number;
-    x: number;
-    y: number;
-    color: string;
-  }
-  const [circles, setCircles] = useState([] as Circle[]);
+  const handleClick = (e: React.MouseEvent<HTMLDivElement>) => {
+    // Don't spawn a circle on top of the CTA buttons / other interactive elements.
+    if (e.target instanceof Element && e.target.closest("a, button")) return;
 
-  const handleBackgroundClick = (e: React.MouseEvent<HTMLDivElement>) => {
-    if (circles.length > 200) return;
-    const { clientX, clientY } = e;
+    const rect = containerRef.current?.getBoundingClientRect();
+    if (!rect) return;
 
-    const newCircle = {
+    const newCircle: Circle = {
+      id: nextId++,
       size: getRandomSize(),
-      x: clientX,
-      y: clientY,
+      x: e.clientX - rect.left,
+      y: e.clientY - rect.top,
       color: getRandomColor(),
     };
 
-    setCircles((prev) => [...prev, newCircle]);
+    setCircles((prev) => {
+      const next = [...prev, newCircle];
+      return next.length > MAX_CIRCLES ? next.slice(next.length - MAX_CIRCLES) : next;
+    });
   };
 
   return (
     <div
-      onClick={handleBackgroundClick}
-      className="relative overflow-x-hidden flex justify-center items-center w-screen h-screen overflow-hidden bg-white"
+      ref={containerRef}
+      onClick={handleClick}
+      className="relative w-full overflow-hidden"
     >
-      <div className="z-30">{children}</div>
-      {circles.map((circle, index) => (
+      {circles.map((circle) => (
         <div
-          key={index}
-          className="absolute rounded-full animate-bounce opacity-50"
+          key={circle.id}
+          aria-hidden="true"
+          className="absolute rounded-full opacity-80 animate-floaty pointer-events-none"
           style={{
             top: circle.y - circle.size / 2,
             left: circle.x - circle.size / 2,
@@ -48,6 +61,7 @@ const InteractiveBackground = ({ children }: { children: ReactNode }) => {
           }}
         />
       ))}
+      <div className="relative">{children}</div>
     </div>
   );
 };
