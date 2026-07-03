@@ -64,6 +64,24 @@ export default function Home() {
         <p className="max-w-[1080px] mx-auto mt-[52px] font-mono text-xs text-muted2">
           © 2026 Ericka Bermúdez · made with 🧡 and too much coffee
         </p>
+        <p className="max-w-[1080px] mx-auto mt-2 font-mono text-xs text-muted2">
+          Profile picture made with{" "}
+          <a
+            href="https://picrew.me/en/image_maker/2288696"
+            className="underline underline-offset-2 hover:text-ink focus:outline-none focus-visible:outline focus-visible:outline-[3px] focus-visible:outline-accent focus-visible:outline-offset-2"
+          >
+            Picrew
+          </a>
+        </p>
+        <p className="max-w-[1080px] mx-auto mt-2 font-mono text-xs text-muted2">
+          Cat doodle icons by{" "}
+          <a
+            href="https://www.etsy.com/es/shop/HoneyBloomGraphics"
+            className="underline underline-offset-2 hover:text-ink focus:outline-none focus-visible:outline focus-visible:outline-[3px] focus-visible:outline-accent focus-visible:outline-offset-2"
+          >
+            HoneyBloomGraphics
+          </a>
+        </p>
       </section>
 
       <ScrollToTop />

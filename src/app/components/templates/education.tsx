@@ -47,7 +47,7 @@ export default function Education() {
         </ul>
       </div>
 
-      <div className="w-40 sm:w-48 md:w-56 lg:w-64 justify-self-center md:justify-self-end md:mt-8 md:-ml-16 lg:-ml-20 rotate-3 hover:rotate-0 transition-transform bg-card border-2 border-ink rounded-md p-2.5 pb-5 shadow-[6px_6px_0_var(--rose)] shrink-0">
+      <div className="w-56 sm:w-64 md:w-56 lg:w-64 justify-self-center md:justify-self-end md:mt-8 md:-ml-16 lg:-ml-20 rotate-3 hover:rotate-0 transition-transform bg-card border-2 border-ink rounded-md p-2.5 pb-5 shadow-[6px_6px_0_var(--rose)] shrink-0">
         <div className="relative w-full aspect-square rounded-sm overflow-hidden">
           <Image
             src="/education/cherry-blossom.jpg"

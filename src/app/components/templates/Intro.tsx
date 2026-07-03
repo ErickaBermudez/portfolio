@@ -59,8 +59,7 @@ export default function Intro() {
           </p>
 
           <p className="m-0 text-[17px] text-muted max-w-[520px]">
-            I like building things with people, not just for them. Books and
-            coffee the rest of the time.
+            I like solving problems with people. Made of books and Monster Energy.
           </p>
 
           <div className="flex gap-3.5 mt-2 flex-wrap justify-center">

@@ -39,7 +39,7 @@ export default function Contact() {
         <h2 className="m-0 flex items-center gap-2 font-display font-extrabold text-[clamp(30px,4.5vw,40px)]">
           Let&apos;s connect!{" "}
           <Image
-            src="/icons/kitty.png"
+            src="/icons/contact.png"
             alt=""
             aria-hidden="true"
             width={40}
@@ -51,6 +51,19 @@ export default function Contact() {
           Excited to chat? Whether you have a project in mind, want to talk
           code, or simply want to connect, I&apos;d love to hear from you!
         </p>
+
+        <div className="mt-6 max-w-[420px] bg-sage border-2 border-ink rounded-2xl px-6 py-5 shadow-[4px_4px_0_var(--ink)] rotate-1 hover:rotate-0 transition-transform">
+          <p className="m-0 mb-2 flex items-center gap-2 font-display font-extrabold text-[17px] text-chip-ink">
+            <span aria-hidden="true">🐾</span> Run a shelter or nonprofit?
+          </p>
+          <p className="m-0 text-[15px] leading-relaxed text-chip-ink">
+            If you&apos;re an animal shelter or a mission-driven nonprofit —
+            especially anything animal-related — and you need a hand with
+            tech, please reach out. I&apos;ll help for <strong>free</strong>.{" "}
+            💛
+          </p>
+        </div>
+
         <div className="flex gap-3 mt-7 flex-wrap">
           <a
             href="https://github.com/ErickaBermudez"
@@ -73,7 +86,7 @@ export default function Contact() {
 
       <form
         onSubmit={handleSubmit}
-        className="flex flex-col gap-4 bg-card border-2 border-ink rounded-2xl p-7 shadow-[6px_6px_0_var(--rose)]"
+        className="flex flex-col gap-4 bg-card border-2 border-ink rounded-2xl p-7 shadow-[6px_6px_0_var(--rose)] -rotate-1 hover:rotate-0 transition-transform"
       >
         <div className="flex flex-col gap-1.5">
           <label htmlFor="name" className="text-sm font-extrabold">

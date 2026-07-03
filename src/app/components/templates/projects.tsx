@@ -16,7 +16,7 @@ interface Project {
 const projects: Project[] = [
   {
     id: 1,
-    title: "Platsage",
+    title: "Tavaro",
     description:
       "Omnichannel AI messaging & CRM platform integrating WhatsApp, Instagram, and Facebook for multi-tenant business clients. Built the multi-tenant AI agent system (LangChain + RAG, per-client personality and knowledge base) and a centralized Meta API OAuth middleware.",
     imageUrl: "/projects/platsage.png",

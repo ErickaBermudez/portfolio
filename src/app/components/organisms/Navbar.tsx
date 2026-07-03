@@ -47,13 +47,13 @@ export default function Navbar() {
   return (
     <nav
       aria-label="Main"
-      className="sticky top-0 z-50 flex items-center gap-4 px-5 sm:px-8 lg:px-[52px] py-3.5 bg-bg border-b-2 border-ink"
+      className="sticky font-bold top-0 z-50 flex items-center gap-4 px-5 sm:px-8 lg:px-[52px] py-3.5 bg-bg border-b-2 border-ink"
     >
       <a
         href="#top"
         aria-label="Home"
         onClick={(e) => scrollToSection(e, "top")}
-        className="font-display text-2xl text-ink no-underline focus:outline-none focus-visible:outline focus-visible:outline-[3px] focus-visible:outline-accent focus-visible:outline-offset-2"
+        className="font-display text-2xl text-ink no-underline inline-block -rotate-6 hover:rotate-0 transition-transform focus:outline-none focus-visible:outline focus-visible:outline-[3px] focus-visible:outline-accent focus-visible:outline-offset-2"
       >
         e<span className="text-accent">.</span>
       </a>
