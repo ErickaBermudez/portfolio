@@ -61,27 +61,42 @@ export default function Home() {
         className={`scroll-mt-20 bg-bg-soft border-t-2 border-ink px-5 sm:px-8 lg:px-[52px] py-11 sm:py-14 lg:pt-[68px] lg:pb-[76px]`}
       >
         <Contact />
-        <p className="max-w-[1080px] mx-auto mt-[52px] font-mono text-xs text-muted2">
-          © 2026 Ericka Bermúdez · made with 🧡 and too much coffee
-        </p>
-        <p className="max-w-[1080px] mx-auto mt-2 font-mono text-xs text-muted2">
-          Profile picture made with{" "}
-          <a
-            href="https://picrew.me/en/image_maker/2288696"
-            className="underline underline-offset-2 hover:text-ink focus:outline-none focus-visible:outline focus-visible:outline-[3px] focus-visible:outline-accent focus-visible:outline-offset-2"
-          >
-            Picrew
-          </a>
-        </p>
-        <p className="max-w-[1080px] mx-auto mt-2 font-mono text-xs text-muted2">
-          Cat doodle icons by{" "}
-          <a
-            href="https://www.etsy.com/es/shop/HoneyBloomGraphics"
-            className="underline underline-offset-2 hover:text-ink focus:outline-none focus-visible:outline focus-visible:outline-[3px] focus-visible:outline-accent focus-visible:outline-offset-2"
-          >
-            HoneyBloomGraphics
-          </a>
-        </p>
+        <footer className="max-w-[1080px] mx-auto mt-[56px] pt-7 border-t-2 border-dashed border-dash flex flex-wrap items-end justify-between gap-x-8 gap-y-5">
+          <p className="m-0 font-mono text-xs leading-relaxed text-muted2">
+            © 2026 Ericka Bermúdez · made with 🧡 and my cat Gordo as supervisor.
+          </p>
+          <div className="flex flex-col gap-2.5 items-start">
+            <span className="font-mono text-[10.5px] tracking-[0.14em] uppercase text-muted2">
+              Credits &amp; sources
+            </span>
+            <div className="flex flex-wrap gap-2.5">
+              <a
+                href="https://picrew.me/en/image_maker/2288696"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-[7px] text-[13px] font-extrabold text-chip-ink no-underline bg-rose border-2 border-ink rounded-full px-[15px] py-[7px] shadow-[3px_3px_0_var(--ink)] transition-[transform,box-shadow] hover:-translate-x-0.5 hover:-translate-y-0.5 hover:shadow-[4px_4px_0_var(--ink)] focus:outline-none focus-visible:outline focus-visible:outline-[3px] focus-visible:outline-accent focus-visible:outline-offset-2"
+              >
+                <span aria-hidden="true">🎨</span> Profile picture · Picrew
+              </a>
+              <a
+                href="https://www.etsy.com/es/shop/HoneyBloomGraphics"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-[7px] text-[13px] font-extrabold text-chip-ink no-underline bg-sage border-2 border-ink rounded-full px-[15px] py-[7px] shadow-[3px_3px_0_var(--ink)] transition-[transform,box-shadow] hover:-translate-x-0.5 hover:-translate-y-0.5 hover:shadow-[4px_4px_0_var(--ink)] focus:outline-none focus-visible:outline focus-visible:outline-[3px] focus-visible:outline-accent focus-visible:outline-offset-2"
+              >
+                <span aria-hidden="true">🐾</span> Cat doodles · HoneyBloomGraphics
+              </a>
+              <a
+                href="https://www.linkedin.com/pulse/basics-graph-databases-part-1-benjamin-prescott/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-[7px] text-[13px] font-extrabold text-chip-ink no-underline bg-peach border-2 border-ink rounded-full px-[15px] py-[7px] shadow-[3px_3px_0_var(--ink)] transition-[transform,box-shadow] hover:-translate-x-0.5 hover:-translate-y-0.5 hover:shadow-[4px_4px_0_var(--ink)] focus:outline-none focus-visible:outline focus-visible:outline-[3px] focus-visible:outline-accent focus-visible:outline-offset-2"
+              >
+                <span aria-hidden="true">🕸️</span> Graph diagram · Benjamin Prescott
+              </a>
+            </div>
+          </div>
+        </footer>
       </section>
 
       <ScrollToTop />

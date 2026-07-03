@@ -57,10 +57,9 @@ export default function Contact() {
             <span aria-hidden="true">🐾</span> Run a shelter or nonprofit?
           </p>
           <p className="m-0 text-[15px] leading-relaxed text-chip-ink">
-            If you&apos;re an animal shelter or a mission-driven nonprofit —
-            especially anything animal-related — and you need a hand with
-            tech, please reach out. I&apos;ll help for <strong>free</strong>.{" "}
-            💛
+            If you&apos;re an animal shelter or a mission-driven nonprofit and you need a hand with
+            tech, please reach out. I&apos;ll be honored to help for <strong>free</strong>.{" "}
+            
           </p>
         </div>
 

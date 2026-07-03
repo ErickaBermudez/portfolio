@@ -1,11 +1,17 @@
 import Image from "next/image";
 import { FC } from "react";
 
+interface ImageCredit {
+  label: string;
+  href: string;
+}
+
 interface Project {
   id: number;
   title: string;
   description: string;
   imageUrl?: string;
+  imageCredit?: ImageCredit; // shown as a small source pill over the image when it isn't an original screenshot
   placeholderLabel?: string; // shown instead of an image when there's no screenshot to show
   tags?: string[];
   link?: string;
@@ -20,6 +26,7 @@ const projects: Project[] = [
     description:
       "Omnichannel AI messaging & CRM platform integrating WhatsApp, Instagram, and Facebook for multi-tenant business clients. Built the multi-tenant AI agent system (LangChain + RAG, per-client personality and knowledge base) and a centralized Meta API OAuth middleware.",
     imageUrl: "/projects/platsage.png",
+    tags: ["Next.js", "React", "LangChain", "Meta API", "AWS services"],
     link: "https://platsage.com/",
     shadow: "shadow-[6px_6px_0_var(--peach)] hover:shadow-[8px_8px_0_var(--peach)]",
   },
@@ -28,7 +35,12 @@ const projects: Project[] = [
     title: "GraphRAG Legal Q&A System",
     description:
       "Context-aware Q&A system built on Neo4j + Azure OpenAI, grounding answers in a structured knowledge graph built from legal documents.",
-    placeholderLabel: "knowledge graph diagram",
+    tags: ["Angular", "FastAPI", "Azure services", "Neo4j"],
+    imageUrl: "/projects/graphrag-diagram.png",
+    imageCredit: {
+      label: "Sample graph · Benjamin Prescott",
+      href: "https://www.linkedin.com/pulse/basics-graph-databases-part-1-benjamin-prescott/",
+    },
     caption: "internal client work · no public link",
     shadow: "shadow-[6px_6px_0_var(--salmon)] hover:shadow-[8px_8px_0_var(--salmon)]",
   },
@@ -48,6 +60,7 @@ const ProjectCard: FC<Project> = ({
   title,
   description,
   imageUrl,
+  imageCredit,
   placeholderLabel,
   tags,
   link,
@@ -75,6 +88,16 @@ const ProjectCard: FC<Project> = ({
               {placeholderLabel}
             </span>
           </div>
+        )}
+        {imageCredit && (
+          <a
+            href={imageCredit.href}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="absolute bottom-2 right-2 inline-flex items-center text-[10px] font-mono font-semibold text-chip-ink no-underline bg-bg/90 border-[1.5px] border-ink rounded-full px-2.5 py-1 backdrop-blur-sm hover:bg-bg transition-colors focus:outline-none focus-visible:outline focus-visible:outline-[3px] focus-visible:outline-accent focus-visible:outline-offset-2"
+          >
+            {imageCredit.label}
+          </a>
         )}
       </div>
       <div className="p-6 flex flex-col gap-3 flex-1">
