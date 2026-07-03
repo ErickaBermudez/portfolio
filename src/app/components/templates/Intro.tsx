@@ -7,7 +7,7 @@ export default function Intro() {
 
   return (
     <InteractiveBackground>
-      <header className="text-center px-5 sm:px-8 lg:px-[52px] pt-14 sm:pt-20 lg:pt-24 pb-12 sm:pb-16 lg:pb-[84px]">
+      <header className="text-center px-5 sm:px-8 lg:px-[52px] pt-14 sm:pt-20 lg:pt-24 pb-16 sm:pb-20 lg:pb-[112px]">
         <div
           aria-hidden="true"
           className="pointer-events-none absolute top-[8%] left-[6%] w-[110px] h-[110px] rounded-full bg-peach opacity-80 animate-floaty"

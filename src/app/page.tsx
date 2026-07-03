@@ -13,7 +13,7 @@ import {
 import { Navbar, ScrollToTop } from "./components/organisms";
 import { LanguageProvider, useLanguage } from "./i18n/LanguageContext";
 
-const SECTION_PADDING = "px-5 sm:px-8 lg:px-[52px] py-11 sm:py-14 lg:py-[68px]";
+const SECTION_PADDING = "px-5 sm:px-8 lg:px-[52px] py-16 sm:py-20 lg:py-[112px]";
 
 export default function Home() {
   return (
@@ -69,7 +69,7 @@ function HomeContent() {
 
       <section
         id="contact"
-        className={`scroll-mt-20 bg-bg-soft border-t-2 border-ink px-5 sm:px-8 lg:px-[52px] py-11 sm:py-14 lg:pt-[68px] lg:pb-[76px]`}
+        className={`scroll-mt-20 bg-bg-soft border-t-2 border-ink px-5 sm:px-8 lg:px-[52px] py-16 sm:py-20 lg:pt-[112px] lg:pb-[120px]`}
       >
         <Contact />
         <footer className="max-w-[1080px] mx-auto mt-[56px] pt-7 border-t-2 border-dashed border-dash flex flex-wrap items-end justify-between gap-x-8 gap-y-5">
