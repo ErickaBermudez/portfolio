@@ -1,7 +1,10 @@
 import Image from "next/image";
 import { InteractiveBackground } from "../organisms";
+import { useLanguage } from "../../i18n/LanguageContext";
 
 export default function Intro() {
+  const { t } = useLanguage();
+
   return (
     <InteractiveBackground>
       <header className="text-center px-5 sm:px-8 lg:px-[52px] pt-14 sm:pt-20 lg:pt-24 pb-12 sm:pb-16 lg:pb-[84px]">
@@ -37,7 +40,7 @@ export default function Intro() {
           </div>
 
           <h1 className="m-0 font-display font-extrabold text-[clamp(40px,7.5vw,72px)] leading-[1.04]">
-            Hi! I&apos;m Ericka{" "}
+            {t.intro.greeting}{" "}
             <Image
               src="/icons/paw-print.png"
               alt=""
@@ -50,16 +53,16 @@ export default function Intro() {
 
           <p className="m-0 text-[clamp(19px,3vw,24px)] leading-normal font-semibold">
             <mark className="bg-peach text-chip-ink px-2.5 py-0.5 rounded-md -rotate-1 inline-block">
-              Cat Mom
+              {t.intro.badge1}
             </mark>{" "}
             &amp;{" "}
             <mark className="bg-rose text-chip-ink px-2.5 py-0.5 rounded-md rotate-1 inline-block">
-              Full-stack AI Developer
+              {t.intro.badge2}
             </mark>
           </p>
 
           <p className="m-0 text-[17px] text-muted max-w-[520px]">
-            I like solving problems with people. Made of books and Monster Energy.
+            {t.intro.tagline}
           </p>
 
           <div className="flex gap-3.5 mt-2 flex-wrap justify-center">
@@ -67,13 +70,13 @@ export default function Intro() {
               href="#projects"
               className="text-base font-extrabold text-bg bg-ink px-[26px] py-[13px] rounded-full no-underline hover:-translate-y-0.5 transition-transform focus:outline-none focus-visible:outline focus-visible:outline-[3px] focus-visible:outline-accent focus-visible:outline-offset-2"
             >
-              See projects
+              {t.intro.ctaProjects}
             </a>
             <a
               href="#contact"
               className="text-base font-extrabold text-ink bg-card border-2 border-ink px-6 py-[11px] rounded-full no-underline shadow-[3px_3px_0_var(--peach)] hover:-translate-x-px hover:-translate-y-px hover:shadow-[4px_4px_0_var(--peach)] transition-transform focus:outline-none focus-visible:outline focus-visible:outline-[3px] focus-visible:outline-accent focus-visible:outline-offset-2"
             >
-              Say hi →
+              {t.intro.ctaContact}
             </a>
           </div>
         </div>

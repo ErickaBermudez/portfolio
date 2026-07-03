@@ -1,3 +1,5 @@
+import { useLanguage } from "../../i18n/LanguageContext";
+
 const SCOPUS_URL = "https://www.scopus.com/authid/detail.uri?authorId=58250570100";
 
 interface Publication {
@@ -40,6 +42,8 @@ const PUBLICATIONS: Publication[] = [
 ];
 
 export default function Research() {
+  const { t } = useLanguage();
+
   return (
     <div className="relative overflow-hidden ">
       <div
@@ -60,21 +64,21 @@ export default function Research() {
 
       <div className="relative max-w-[1080px] mx-auto mb-5">
         <p className="inline-flex items-center gap-2 m-0 mb-3.5 font-mono text-xs tracking-[.14em] uppercase text-chip-ink bg-rose border-2 border-ink rounded-full px-3.5 py-1.5 rotate-1 shadow-[2px_2px_0_var(--ink)]">
-          <span aria-hidden="true">🔬</span> Peer-reviewed
+          <span aria-hidden="true">🔬</span> {t.research.badge}
         </p>
         <div className="flex items-center gap-4 flex-wrap mb-3">
           <h2 className="m-0 font-display font-extrabold text-[clamp(28px,4vw,36px)]">
-            Research
+            {t.research.heading}
           </h2>
           <a
             href={SCOPUS_URL}
             className="font-mono text-[13px] text-chip-ink no-underline border-2 border-ink rounded-full px-3.5 py-[5px] bg-sage hover:-translate-y-px transition-transform focus:outline-none focus-visible:outline focus-visible:outline-[3px] focus-visible:outline-accent focus-visible:outline-offset-2"
           >
-            FIND ME IN SCOPUS →
+            {t.research.scopusLink}
           </a>
         </div>
         <p className="m-0 mb-9 text-[17px] leading-relaxed text-muted max-w-[640px]">
-          I believe ML shouldn't cost people their privacy. That belief is basically what my published research is about: <mark className="bg-sage text-chip-ink px-2 py-0.5 rounded-md">federated learning</mark> and privacy-preserving ML.
+          {t.research.introPrefix} <mark className="bg-sage text-chip-ink px-2 py-0.5 rounded-md">{t.research.introHighlight}</mark> {t.research.introSuffix}
         </p>
 
         <ol className="m-0 p-0 list-none flex flex-col gap-5 max-w-[900px]">
@@ -102,7 +106,7 @@ export default function Research() {
                   href={url}
                   className="text-sm font-extrabold text-accent-ink bg-accent border-2 border-ink rounded-full px-[18px] py-2.5 no-underline shrink-0 shadow-[2px_2px_0_var(--ink)] hover:-translate-x-px hover:-translate-y-px hover:shadow-[3px_3px_0_var(--ink)] transition-transform focus:outline-none focus-visible:outline focus-visible:outline-[3px] focus-visible:outline-accent focus-visible:outline-offset-2"
                 >
-                  Read →
+                  {t.research.readMore}
                 </a>
               )}
             </li>

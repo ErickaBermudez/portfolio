@@ -1,21 +1,20 @@
 import Image from "next/image";
+import { useLanguage } from "../../i18n/LanguageContext";
 
 export default function About() {
+  const { t } = useLanguage();
+
   return (
     <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12 items-center max-w-[1080px] mx-auto">
       <div>
         <h2 className="m-0 mb-4 font-display font-extrabold text-[clamp(28px,4vw,36px)]">
-          About me
+          {t.about.heading}
         </h2>
         <p className="m-0 text-[clamp(16px,2vw,18px)] leading-[1.8] max-w-[620px]">
-          Hello there! I&apos;m Ericka, a problem solver who often
-          ends up writing code to fix things. I believe in the power of teammwork and thrive in finding how all the pieces fit together.
-          I care about good system design, clean code and responsible AI. When I&apos;m not coding, you&apos;ll find me
-          enjoying a book next to my cats.
+          {t.about.bio}
         </p>
         <p className="mt-5 mb-0 font-mono text-[13.5px] text-muted">
-          Spanish (native) · English (fluent, TOEFL iBT 108) · Basic Chinese
-          &amp; Korean
+          {t.about.languages}
         </p>
       </div>
 
@@ -30,7 +29,7 @@ export default function About() {
         </div>
         <div>
           <p className="m-0 font-mono text-[11.5px] tracking-[.12em] uppercase text-muted2">
-            📖 Current book rec
+            {t.about.bookRecLabel}
           </p>
           <p className="mt-2 mb-0 text-[19px] font-extrabold font-display">
             <a
@@ -40,7 +39,7 @@ export default function About() {
               Empire of AI
             </a>
           </p>
-          <p className="mt-1 mb-0 text-[15px] text-muted">by Karen Hao</p>
+          <p className="mt-1 mb-0 text-[15px] text-muted">{t.about.bookAuthor}</p>
         </div>
       </div>
     </div>

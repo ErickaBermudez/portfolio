@@ -1,34 +1,34 @@
 import Image from "next/image";
+import { useLanguage } from "../../i18n/LanguageContext";
 
 const EDUCATION = [
   {
     years: "2022–2024",
-    degree: "Master's in Engineering, Data Analytics",
     school: "Hankuk University of Foreign Studies · South Korea",
   },
   {
     years: "2017–2021",
-    degree: "B.S. Computer Science",
     school: "Universidad Autónoma de Chihuahua · Mexico",
   },
   {
     years: "2014–2017",
-    degree: "B.S. Information & Communication Technologies Management",
     school: "Universidad Autónoma de Chihuahua · Mexico",
   },
 ];
 
 export default function Education() {
+  const { t } = useLanguage();
+
   return (
     <div className="max-w-[1080px] mx-auto grid grid-cols-1 md:grid-cols-[1fr_30%] gap-8 md:gap-0 items-start">
       <div>
         <h2 className="m-0 mb-[30px] font-display font-extrabold text-[clamp(28px,4vw,36px)]">
-          Education
+          {t.education.heading}
         </h2>
         <ul className="m-0 p-0 list-none flex flex-col max-w-[860px]">
-          {EDUCATION.map(({ years, degree, school }, i) => (
+          {EDUCATION.map(({ years, school }, i) => (
             <li
-              key={degree}
+              key={years}
               className={`flex gap-4 sm:gap-6 py-5 px-1 items-baseline flex-wrap ${
                 i < EDUCATION.length - 1 ? "border-b-2 border-dashed border-dash" : ""
               }`}
@@ -38,7 +38,7 @@ export default function Education() {
               </span>
               <div className="flex-1 min-w-[280px]">
                 <h3 className="m-0 font-display font-extrabold text-[19px]">
-                  {degree}
+                  {t.education.degrees[i]}
                 </h3>
                 <p className="mt-1 mb-0 text-[15.5px] text-muted">{school}</p>
               </div>

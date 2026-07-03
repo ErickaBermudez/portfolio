@@ -1,25 +1,31 @@
 "use client";
 
 import { useEffect, useState } from "react";
+import { useLanguage } from "../../i18n/LanguageContext";
 
-const NAV_LINKS = [
-  { id: "about", label: "About" },
-  { id: "stack", label: "Stack" },
-  { id: "leadership", label: "Leadership" },
-  { id: "projects", label: "Projects" },
-  { id: "research", label: "Research" },
-  { id: "contact", label: "Contact" },
-];
+const NAV_LINK_IDS = [
+  "about",
+  "stack",
+  "leadership",
+  "projects",
+  "research",
+  "contact",
+] as const;
 
 export default function Navbar() {
+  const { lang, setLang, t } = useLanguage();
   const [theme, setTheme] = useState<"light" | "dark" | null>(null);
   const [menuOpen, setMenuOpen] = useState(false);
+
+  const navLinks = NAV_LINK_IDS.map((id) => ({ id, label: t.nav.links[id] }));
 
   useEffect(() => {
     setTheme(
       document.documentElement.classList.contains("dark") ? "dark" : "light"
     );
   }, []);
+
+  const toggleLanguage = () => setLang(lang === "en" ? "es" : "en");
 
   const toggleTheme = () => {
     const next = theme === "dark" ? "light" : "dark";
@@ -51,7 +57,7 @@ export default function Navbar() {
     >
       <a
         href="#top"
-        aria-label="Home"
+        aria-label={t.nav.home}
         onClick={(e) => scrollToSection(e, "top")}
         className="font-display text-2xl text-ink no-underline inline-block -rotate-6 hover:rotate-0 transition-transform focus:outline-none focus-visible:outline focus-visible:outline-[3px] focus-visible:outline-accent focus-visible:outline-offset-2"
       >
@@ -59,7 +65,7 @@ export default function Navbar() {
       </a>
 
       <div className="hidden lg:flex flex-wrap gap-0.5 ml-2">
-        {NAV_LINKS.map(({ id, label }) => (
+        {navLinks.map(({ id, label }) => (
           <a
             key={id}
             href={`#${id}`}
@@ -73,10 +79,16 @@ export default function Navbar() {
 
       <div className="ml-auto flex items-center gap-3">
         <button
+          onClick={toggleLanguage}
+          aria-label={lang === "en" ? t.nav.switchToSpanish : t.nav.switchToEnglish}
+          className="w-10 h-10 rounded-full border-2 border-ink bg-card text-ink text-[13px] font-extrabold shadow-[2px_2px_0_var(--ink)] hover:-translate-x-px hover:-translate-y-px hover:shadow-[3px_3px_0_var(--ink)] transition-transform focus:outline-none focus-visible:outline focus-visible:outline-[3px] focus-visible:outline-accent focus-visible:outline-offset-2"
+        >
+          {lang === "en" ? "ES" : "EN"}
+        </button>
+
+        <button
           onClick={toggleTheme}
-          aria-label={
-            theme === "dark" ? "Switch to light theme" : "Switch to dark theme"
-          }
+          aria-label={theme === "dark" ? t.nav.switchToLight : t.nav.switchToDark}
           className="w-10 h-10 rounded-full border-2 border-ink bg-card text-ink text-base shadow-[2px_2px_0_var(--ink)] hover:-translate-x-px hover:-translate-y-px hover:shadow-[3px_3px_0_var(--ink)] transition-transform focus:outline-none focus-visible:outline focus-visible:outline-[3px] focus-visible:outline-accent focus-visible:outline-offset-2"
         >
           <span className={theme === null ? "opacity-0" : undefined}>
@@ -89,12 +101,12 @@ export default function Navbar() {
           download
           className="hidden lg:inline-flex text-[15px] font-extrabold text-accent-ink bg-accent px-5 py-[11px] rounded-full no-underline shadow-[3px_3px_0_var(--ink)] hover:-translate-x-px hover:-translate-y-px hover:shadow-[4px_4px_0_var(--ink)] transition-transform focus:outline-none focus-visible:outline focus-visible:outline-[3px] focus-visible:outline-accent focus-visible:outline-offset-2"
         >
-          Download CV
+          {t.nav.downloadCv}
         </a>
 
         <button
           onClick={() => setMenuOpen((o) => !o)}
-          aria-label={menuOpen ? "Close menu" : "Open menu"}
+          aria-label={menuOpen ? t.nav.closeMenu : t.nav.openMenu}
           aria-expanded={menuOpen}
           className="lg:hidden w-10 h-10 rounded-xl border-2 border-ink bg-card text-ink text-lg shadow-[2px_2px_0_var(--ink)] focus:outline-none focus-visible:outline focus-visible:outline-[3px] focus-visible:outline-accent focus-visible:outline-offset-2"
         >
@@ -104,7 +116,7 @@ export default function Navbar() {
 
       {menuOpen && (
         <div className="lg:hidden absolute top-full left-0 right-0 flex flex-col gap-0.5 px-5 sm:px-8 pt-2.5 pb-4 bg-bg border-b-2 border-ink">
-          {NAV_LINKS.map(({ id, label }) => (
+          {navLinks.map(({ id, label }) => (
             <a
               key={id}
               href={`#${id}`}
@@ -119,7 +131,7 @@ export default function Navbar() {
             download
             className="mt-2 text-center text-base font-extrabold text-accent-ink bg-accent px-5 py-[13px] rounded-full no-underline shadow-[3px_3px_0_var(--ink)] focus:outline-none focus-visible:outline focus-visible:outline-[3px] focus-visible:outline-accent focus-visible:outline-offset-2"
           >
-            Download CV
+            {t.nav.downloadCv}
           </a>
         </div>
       )}
