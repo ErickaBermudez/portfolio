@@ -1,6 +1,7 @@
 import type { Config } from "tailwindcss";
 
 export default {
+  darkMode: "class",
   content: [
     "./src/pages/**/*.{js,ts,jsx,tsx,mdx}",
     "./src/components/**/*.{js,ts,jsx,tsx,mdx}",
@@ -9,21 +10,44 @@ export default {
   theme: {
     extend: {
       colors: {
-        background: "var(--background)",
-        foreground: "var(--foreground)",
+        bg: "var(--bg)",
+        "bg-soft": "var(--bg-soft)",
+        "bg-rose": "var(--bg-rose)",
+        ink: "var(--ink)",
+        card: "var(--card)",
+        muted: "var(--muted)",
+        muted2: "var(--muted2)",
+        accent: "var(--accent)",
+        "accent-ink": "var(--accent-ink)",
+        peach: "var(--peach)",
+        salmon: "var(--salmon)",
+        rose: "var(--rose)",
+        sage: "var(--sage)",
+        "chip-ink": "var(--chip-ink)",
+        stripe1: "var(--stripe1)",
+        stripe2: "var(--stripe2)",
+        dash: "var(--dash)",
+        "input-bg": "var(--input-bg)",
+        "nav-pill": "var(--nav-pill)",
+      },
+      fontFamily: {
+        display: ["var(--font-bricolage)", "sans-serif"],
+        sans: ["var(--font-nunito)", "sans-serif"],
+        mono: ["var(--font-plex-mono)", "monospace"],
+        serif: ["var(--font-young-serif)", "serif"],
       },
       animation: {
-        fadeIn: "fadeIn 1s ease-in-out forwards",
-        slideUp: "slideUp 1s ease-out forwards",
+        floaty: "floaty 5s ease-in-out infinite alternate",
+        pawWiggle: "pawWiggle 2.4s ease-in-out infinite",
       },
       keyframes: {
-        fadeIn: {
-          "0%": { opacity: "0" },
-          "100%": { opacity: "1" },
+        floaty: {
+          from: { transform: "translateY(0)" },
+          to: { transform: "translateY(-18px)" },
         },
-        slideUp: {
-          "0%": { opacity: "0", transform: "translateY(-20px)" },
-          "100%": { opacity: "1", transform: "translateY(0)" },
+        pawWiggle: {
+          "0%, 100%": { transform: "rotate(-10deg)" },
+          "50%": { transform: "rotate(10deg)" },
         },
       },
     },

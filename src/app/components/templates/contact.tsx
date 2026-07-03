@@ -1,3 +1,4 @@
+import Image from "next/image";
 import { useState } from "react";
 
 export default function Contact() {
@@ -33,126 +34,115 @@ export default function Contact() {
   };
 
   return (
-    <div className="flex flex-col min-h-screen relative">
-      <div className="w-full">
-        <svg
-          viewBox="0 0 1200 120"
-          preserveAspectRatio="none"
-          className="w-full h-24"
-          style={{ color: "#FFE6C9" }}
-          aria-hidden="true"
+    <div className="max-w-[1080px] mx-auto grid grid-cols-1 md:grid-cols-2 gap-10 md:gap-14 items-start">
+      <div>
+        <h2 className="m-0 flex items-center gap-2 font-display font-extrabold text-[clamp(30px,4.5vw,40px)]">
+          Let&apos;s connect!{" "}
+          <Image
+            src="/icons/contact.png"
+            alt=""
+            aria-hidden="true"
+            width={40}
+            height={40}
+            className="inline-block w-[0.85em] h-[0.85em]"
+          />
+        </h2>
+        <p className="mt-[18px] mb-0 text-[17px] leading-[1.7] text-muted max-w-[420px]">
+          Excited to chat? Whether you have a project in mind, want to talk
+          code, or simply want to connect, I&apos;d love to hear from you!
+        </p>
+
+        <div className="mt-6 max-w-[420px] bg-sage border-2 border-ink rounded-2xl px-6 py-5 shadow-[4px_4px_0_var(--ink)] rotate-1 hover:rotate-0 transition-transform">
+          <p className="m-0 mb-2 flex items-center gap-2 font-display font-extrabold text-[17px] text-chip-ink">
+            <span aria-hidden="true">🐾</span> Run a shelter or nonprofit?
+          </p>
+          <p className="m-0 text-[15px] leading-relaxed text-chip-ink">
+            If you&apos;re an animal shelter or a mission-driven nonprofit and you need a hand with
+            tech, please reach out. I&apos;ll be honored to help for <strong>free</strong>.{" "}
+            
+          </p>
+        </div>
+
+        <div className="flex gap-3 mt-7 flex-wrap">
+          <a
+            href="https://github.com/ErickaBermudez"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-ink text-[15px] font-extrabold no-underline bg-card border-2 border-ink rounded-full px-5 py-2.5 shadow-[3px_3px_0_var(--peach)] hover:-translate-x-px hover:-translate-y-px hover:shadow-[4px_4px_0_var(--peach)] transition-transform focus:outline-none focus-visible:outline focus-visible:outline-[3px] focus-visible:outline-accent focus-visible:outline-offset-2"
+          >
+            GitHub
+          </a>
+          <a
+            href="https://www.linkedin.com/in/ericka-bermudez/"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-ink text-[15px] font-extrabold no-underline bg-card border-2 border-ink rounded-full px-5 py-2.5 shadow-[3px_3px_0_var(--rose)] hover:-translate-x-px hover:-translate-y-px hover:shadow-[4px_4px_0_var(--rose)] transition-transform focus:outline-none focus-visible:outline focus-visible:outline-[3px] focus-visible:outline-accent focus-visible:outline-offset-2"
+          >
+            LinkedIn
+          </a>
+        </div>
+      </div>
+
+      <form
+        onSubmit={handleSubmit}
+        className="flex flex-col gap-4 bg-card border-2 border-ink rounded-2xl p-7 shadow-[6px_6px_0_var(--rose)] -rotate-1 hover:rotate-0 transition-transform"
+      >
+        <div className="flex flex-col gap-1.5">
+          <label htmlFor="name" className="text-sm font-extrabold">
+            Name
+          </label>
+          <input
+            type="text"
+            id="name"
+            name="name"
+            required
+            className="bg-input-bg border-2 border-ink rounded-[10px] px-3.5 py-3 text-ink text-base focus:outline-none focus-visible:outline focus-visible:outline-[3px] focus-visible:outline-accent focus-visible:outline-offset-2"
+          />
+        </div>
+
+        <div className="flex flex-col gap-1.5">
+          <label htmlFor="email" className="text-sm font-extrabold">
+            Email
+          </label>
+          <input
+            type="email"
+            id="email"
+            name="email"
+            required
+            className="bg-input-bg border-2 border-ink rounded-[10px] px-3.5 py-3 text-ink text-base focus:outline-none focus-visible:outline focus-visible:outline-[3px] focus-visible:outline-accent focus-visible:outline-offset-2"
+          />
+        </div>
+
+        <div className="flex flex-col gap-1.5">
+          <label htmlFor="message" className="text-sm font-extrabold">
+            Message
+          </label>
+          <textarea
+            id="message"
+            name="message"
+            rows={4}
+            required
+            className="bg-input-bg border-2 border-ink rounded-[10px] px-3.5 py-3 text-ink text-base resize-y focus:outline-none focus-visible:outline focus-visible:outline-[3px] focus-visible:outline-accent focus-visible:outline-offset-2"
+          />
+        </div>
+
+        <button
+          type="submit"
+          disabled={isSubmitting}
+          className="self-start bg-accent text-accent-ink font-extrabold text-[15px] border-2 border-ink rounded-full px-[26px] py-3 shadow-[3px_3px_0_var(--ink)] hover:-translate-x-px hover:-translate-y-px hover:shadow-[4px_4px_0_var(--ink)] transition-transform disabled:opacity-60 disabled:pointer-events-none focus:outline-none focus-visible:outline focus-visible:outline-[3px] focus-visible:outline-accent focus-visible:outline-offset-[3px]"
         >
-          <path
-            d="M0,0 H1200 V20
-               C1300,200 1000,20 900,100
-               C800,180 700,0 600,80
-               C500,160 400,20 300,100
-               C200,180 100,20 0,100
-               Z"
-            fill="currentColor"
-          />
-        </svg>
-      </div>
+          {isSubmitting ? "Sending..." : "Send message"}
+        </button>
 
-      <div className="grid grid-cols-2 gap-3 mt-10 px-10 lg:px-36 min-h-[80vh]">
-        <div className="flex col-span-2 lg:col-span-1 flex-col items-center justify-center">
-          <h1 className="text-4xl font-bold relative z-10">
-            Let&apos;s Connect!
-          </h1>
-          <div
-            className="w-48 h-6 -mt-5 -ml-6"
-            style={{ backgroundColor: "#FFE6C9" }}
-          />
-          <div className="mt-8 space-y-4">
-            <p className="text-lg">
-              Excited to chat? Whether you have a project in mind, want to talk
-              code, or simply want to connect, I&apos;d love to hear from you!
-            </p>
-            <div className="flex gap-4 justify-center mt-6">
-              <a
-                href="https://github.com/ErickaBermudez"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                <i className="devicon-github-original text-3xl hover:scale-110 transition-transform" />
-              </a>
-              <a
-                href="https://www.linkedin.com/in/ericka-bermudez/"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                <i className="devicon-linkedin-plain text-3xl hover:scale-110 transition-transform" />
-              </a>
-            </div>
-          </div>
-        </div>
-
-        <div className="flex flex-col mt-10 lg:mt-0 col-span-2 lg:col-span-1 items-center justify-center">
-          <form onSubmit={handleSubmit} className="w-full max-w-md space-y-4">
-            <div>
-              <label
-                htmlFor="name"
-                className="block text-sm font-medium text-gray-700"
-              >
-                Name
-              </label>
-              <input
-                type="text"
-                id="name"
-                name="name"
-                required
-                className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-[#FFE6C9] focus:ring focus:ring-[#FFE6C9] focus:ring-opacity-50"
-              />
-            </div>
-
-            <div>
-              <label
-                htmlFor="email"
-                className="block text-sm font-medium text-gray-700"
-              >
-                Email
-              </label>
-              <input
-                type="email"
-                id="email"
-                name="email"
-                required
-                className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-[#FFE6C9] focus:ring focus:ring-[#FFE6C9] focus:ring-opacity-50"
-              />
-            </div>
-
-            <div>
-              <label
-                htmlFor="message"
-                className="block text-sm font-medium text-gray-700"
-              >
-                Message
-              </label>
-              <textarea
-                id="message"
-                name="message"
-                rows={4}
-                required
-                className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-[#FFE6C9] focus:ring focus:ring-[#FFE6C9] focus:ring-opacity-50"
-              />
-            </div>
-
-            <button
-              type="submit"
-              disabled={isSubmitting}
-              className="w-full py-2 px-4 border border-transparent rounded-md shadow-sm text-black bg-[#FFE6C9] hover:bg-[#ffd7a8] focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-[#FFE6C9] transition-colors duration-200"
-            >
-              {isSubmitting ? "Sending..." : "Send Message"}
-            </button>
-
-            {submitSuccess && (
-              <div className="mt-4 p-4 bg-green-100 text-green-700 rounded-md">
-                Thanks for reaching out! I&apos;ll get back to you soon.
-              </div>
-            )}
-          </form>
-        </div>
-      </div>
+        {submitSuccess && (
+          <p
+            role="status"
+            className="m-0 text-[15px] font-extrabold text-ink bg-sage border-2 border-ink rounded-[10px] px-3.5 py-2.5"
+          >
+            Thanks for reaching out! I&apos;ll get back to you soon.
+          </p>
+        )}
+      </form>
     </div>
   );
 }
