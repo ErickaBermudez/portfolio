@@ -1,10 +1,11 @@
+import { useLanguage } from "../../i18n/LanguageContext";
+
 interface StackItem {
   name: string;
   mastery: number;
 }
 
 interface StackGroup {
-  label: string;
   dotColor: string;
   pillColor: string;
   textColor: string;
@@ -13,7 +14,6 @@ interface StackGroup {
 
 const STACK: StackGroup[] = [
   {
-    label: "Languages & Frameworks",
     dotColor: "bg-peach",
     pillColor: "bg-peach",
     textColor: "text-chip-ink",
@@ -28,7 +28,6 @@ const STACK: StackGroup[] = [
     ],
   },
   {
-    label: "AI / ML",
     dotColor: "bg-salmon",
     pillColor: "bg-salmon",
     textColor: "text-chip-ink",
@@ -41,7 +40,6 @@ const STACK: StackGroup[] = [
     ],
   },
   {
-    label: "Data & Cloud",
     dotColor: "bg-rose",
     pillColor: "bg-rose",
     textColor: "text-chip-ink",
@@ -55,7 +53,6 @@ const STACK: StackGroup[] = [
     ],
   },
   {
-    label: "Other",
     dotColor: "bg-card border-2 border-ink",
     pillColor: "bg-card",
     textColor: "text-ink",
@@ -77,23 +74,23 @@ const STACK: StackGroup[] = [
 const ROTATIONS = ["-rotate-1", "rotate-1", "rotate-0", "rotate-1", "-rotate-1", "rotate-0"];
 
 export default function Stack() {
+  const { t } = useLanguage();
+
   return (
     <div className="max-w-[1080px] mx-auto">
       <h2 className="m-0 mb-2.5 font-display font-extrabold text-[clamp(28px,4vw,36px)]">
-        What do I do?
+        {t.stack.heading}
       </h2>
       <p className="m-0 mb-8 text-[17px] leading-relaxed text-muted max-w-[620px]">
-        I enjoy learning more than anything and I&apos;m always ready to jump to the right tool for the job.
-        Here&apos;s the stack I&apos;ve used most
-        so far.
+        {t.stack.intro}
       </p>
 
       <div className="flex flex-col gap-6">
-        {STACK.map(({ label, dotColor, pillColor, textColor, items }) => (
-          <div key={label} className="flex items-baseline gap-x-5 gap-y-3 flex-wrap">
+        {STACK.map(({ dotColor, pillColor, textColor, items }, groupIndex) => (
+          <div key={groupIndex} className="flex items-baseline gap-x-5 gap-y-3 flex-wrap">
             <h3 className="m-0 w-[210px] shrink-0 flex items-center gap-2.5 font-display font-semibold text-base">
               <span className={`w-3.5 h-3.5 rounded-full ${dotColor} shrink-0`} />
-              {label}
+              {t.stack.groups[groupIndex]}
             </h3>
             <ul className="m-0 p-0 list-none flex flex-wrap gap-2.5 flex-1 min-w-[320px]">
               {items.map(({ name, mastery }, i) => (

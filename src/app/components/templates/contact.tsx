@@ -1,7 +1,9 @@
 import Image from "next/image";
 import { useState } from "react";
+import { useLanguage } from "../../i18n/LanguageContext";
 
 export default function Contact() {
+  const { t } = useLanguage();
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitSuccess, setSubmitSuccess] = useState(false);
 
@@ -37,7 +39,7 @@ export default function Contact() {
     <div className="max-w-[1080px] mx-auto grid grid-cols-1 md:grid-cols-2 gap-10 md:gap-14 items-start">
       <div>
         <h2 className="m-0 flex items-center gap-2 font-display font-extrabold text-[clamp(30px,4.5vw,40px)]">
-          Let&apos;s connect!{" "}
+          {t.contact.heading}{" "}
           <Image
             src="/icons/contact.png"
             alt=""
@@ -48,18 +50,15 @@ export default function Contact() {
           />
         </h2>
         <p className="mt-[18px] mb-0 text-[17px] leading-[1.7] text-muted max-w-[420px]">
-          Excited to chat? Whether you have a project in mind, want to talk
-          code, or simply want to connect, I&apos;d love to hear from you!
+          {t.contact.intro}
         </p>
 
         <div className="mt-6 max-w-[420px] bg-sage border-2 border-ink rounded-2xl px-6 py-5 shadow-[4px_4px_0_var(--ink)] rotate-1 hover:rotate-0 transition-transform">
           <p className="m-0 mb-2 flex items-center gap-2 font-display font-extrabold text-[17px] text-chip-ink">
-            <span aria-hidden="true">🐾</span> Run a shelter or nonprofit?
+            <span aria-hidden="true">🐾</span> {t.contact.shelterTitle}
           </p>
           <p className="m-0 text-[15px] leading-relaxed text-chip-ink">
-            If you&apos;re an animal shelter or a mission-driven nonprofit and you need a hand with
-            tech, please reach out. I&apos;ll be honored to help for <strong>free</strong>.{" "}
-            
+            {t.contact.shelterText} <strong>{t.contact.shelterFreeWord}</strong>.
           </p>
         </div>
 
@@ -89,7 +88,7 @@ export default function Contact() {
       >
         <div className="flex flex-col gap-1.5">
           <label htmlFor="name" className="text-sm font-extrabold">
-            Name
+            {t.contact.nameLabel}
           </label>
           <input
             type="text"
@@ -102,7 +101,7 @@ export default function Contact() {
 
         <div className="flex flex-col gap-1.5">
           <label htmlFor="email" className="text-sm font-extrabold">
-            Email
+            {t.contact.emailLabel}
           </label>
           <input
             type="email"
@@ -115,7 +114,7 @@ export default function Contact() {
 
         <div className="flex flex-col gap-1.5">
           <label htmlFor="message" className="text-sm font-extrabold">
-            Message
+            {t.contact.messageLabel}
           </label>
           <textarea
             id="message"
@@ -131,7 +130,7 @@ export default function Contact() {
           disabled={isSubmitting}
           className="self-start bg-accent text-accent-ink font-extrabold text-[15px] border-2 border-ink rounded-full px-[26px] py-3 shadow-[3px_3px_0_var(--ink)] hover:-translate-x-px hover:-translate-y-px hover:shadow-[4px_4px_0_var(--ink)] transition-transform disabled:opacity-60 disabled:pointer-events-none focus:outline-none focus-visible:outline focus-visible:outline-[3px] focus-visible:outline-accent focus-visible:outline-offset-[3px]"
         >
-          {isSubmitting ? "Sending..." : "Send message"}
+          {isSubmitting ? t.contact.sending : t.contact.send}
         </button>
 
         {submitSuccess && (
@@ -139,7 +138,7 @@ export default function Contact() {
             role="status"
             className="m-0 text-[15px] font-extrabold text-ink bg-sage border-2 border-ink rounded-[10px] px-3.5 py-2.5"
           >
-            Thanks for reaching out! I&apos;ll get back to you soon.
+            {t.contact.successMessage}
           </p>
         )}
       </form>
