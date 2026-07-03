@@ -127,7 +127,7 @@ const en: Translations = {
   },
   intro: {
     greeting: "Hi! I'm Ericka",
-    badge1: "Cat Mom",
+    badge1: "Cat Parent",
     badge2: "Full-stack AI Developer",
     tagline: "I like solving problems with people. Made of books and Monster Energy.",
     ctaProjects: "See projects",
@@ -221,7 +221,7 @@ const en: Translations = {
     heading: "Let's connect!",
     intro:
       "Excited to chat? Whether you have a project in mind, want to talk code, or simply want to connect, I'd love to hear from you!",
-    shelterTitle: "🐾 Run a shelter or nonprofit?",
+    shelterTitle: "Run a shelter or nonprofit?",
     shelterText:
       "If you're an animal shelter or a mission-driven nonprofit and you need a hand with tech, please reach out. I'd be honored to help for",
     shelterFreeWord: "free",
@@ -356,7 +356,7 @@ const es: Translations = {
     heading: "¡Conectemos!",
     intro:
       "¿Platicamos? Ya sea que tengas un proyecto en mente, quieras hablar de código limpio o simplemente conectar, ¡me encantaría saber de ti!",
-    shelterTitle: "🐾 ¿Diriges un refugio u ONG?",
+    shelterTitle: "¿Diriges un refugio u ONG?",
     shelterText:
       "Si eres un refugio de animales o una organización sin fines de lucro con una misión importante y necesitas ayuda con tecnología, contáctame. Será un honor ayudarte",
     shelterFreeWord: "gratis",
