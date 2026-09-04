@@ -38,6 +38,14 @@ const projects: Project[] = [
     link: "https://github.com/ErickaBermudez/pokemon-pokedex",
     shadow: "shadow-[6px_6px_0_var(--peach)] hover:shadow-[8px_8px_0_var(--peach)]",
   },
+  {
+    id: 4,
+    title: "Waypo",
+    imageUrl: "/projects/waypo.png",
+    tags: ["Next.js", "Supabase", "TailwindCSS", "PWA"],
+    link: "https://www.waypo.app/",
+    shadow: "shadow-[6px_6px_0_var(--salmon)] hover:shadow-[8px_8px_0_var(--salmon)]",
+  },
 ];
 
 interface ProjectCardProps extends Project {

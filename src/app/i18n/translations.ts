@@ -69,7 +69,7 @@ export interface Translations {
   projects: {
     heading: string;
     viewProject: string;
-    items: [ProjectItemCopy, ProjectItemCopy, ProjectItemCopy];
+    items: [ProjectItemCopy, ProjectItemCopy, ProjectItemCopy, ProjectItemCopy];
   };
   research: {
     badge: string;
@@ -196,6 +196,10 @@ const en: Translations = {
       {
         description:
           "A simple pokedex app that lets you search for a pokemon and see its details. The fun-and-fundamentals entry.",
+      },
+      {
+        description:
+          "A shared trip-planning app for two travelers, built with Next.js and Supabase. Magic-link auth, realtime sync between trip members, document uploads to private storage, and offline PWA support.",
       },
     ],
   },
@@ -331,6 +335,10 @@ const es: Translations = {
       {
         description:
           "Una pokedex sencilla que te permite buscar un pokémon y ver sus detalles. La entrada de diversión y fundamentos.",
+      },
+      {
+        description:
+          "Una app para planear viajes en pareja, construida con Next.js y Supabase. Autenticación por magic link, sincronización en tiempo real entre viajeros, subida de documentos a almacenamiento privado, y soporte PWA sin conexión.",
       },
     ],
   },
